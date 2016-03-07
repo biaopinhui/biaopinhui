@@ -1,0 +1,44 @@
+---
+ansible_ssh_host: 52.32.9.232
+ansible_ssh_user: ec2-user
+ansible_ssh_private_key_file: ~/biaopinhui.pem
+ansible_become: yes
+
+env: staging
+www_dir: "public"
+www_home: /var/www
+www_domain: biaopinhui
+project_dir: /var/www/biaopinhui
+
+nginx_port: 80
+nginx_listen_ip: 0.0.0.0
+
+timezone: "Asia/Singapore"
+php_date_timezone: "Asia/Singapore"
+
+php_enablerepo: "amzn-main"
+php_webserver_daemon: "nginx"
+php_enable_php_fpm: true
+
+php_packages:
+  - ImageMagick
+  - php56
+  - php56-common
+  - php56-devel
+  - php56-fpm
+  - php56-gd
+  - php56-mbstring
+  - php56-opcache
+  - php56-pdo
+  - php56-mysqlnd
+  - php56-xml
+  - php56-mcrypt
+  - php56-pecl-memcached
+
+php_opcache_enable: "0"
+php_opcache_enable_cli: "0"
+php_opcache_enabled_in_ini: false
+php_opcache_conf_filename: "10-opcache.ini"
+php_opcache_validate_timestamps: "0"
+
+php_fpm_pm_max_spare_servers: 35

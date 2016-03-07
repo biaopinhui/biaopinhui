@@ -1,0 +1,54 @@
+---
+- hosts: all
+  gather_facts: False
+  tasks:
+    - name: Register php version
+      shell: command -v php && php --version
+      register: php_version
+      changed_when: false
+      ignore_errors: true
+
+    - name: Uninstall existing php
+      yum:
+        name: php*
+        state: absent
+      when: "'5.6' not in php_version.stdout"
+
+- hosts: all
+  roles:
+    - { role: juwai.common,         tags: ['all', 'common'] }
+    - { role: juwai.nginx,          tags: ['all', 'nginx'] }
+    - { role: juwai.memcached,      tags: ['all', 'memcached'] }
+    - { role: geerlingguy.php,      tags: ['all', 'php'] }
+    - { role: geerlingguy.composer, tags: ['all', 'composer'] }
+    - { role: juwai.nodejs,         tags: ['all', 'nodejs'] }
+
+- hosts: all
+  vars:
+    force_npm_install: no
+  tasks:
+    - name: Ensure nginx conf at right place
+      register: nginx_conf_changed
+      template:
+        src: templates/nginx.conf
+        dest: "/etc/nginx/conf.d/{{ www_domain }}.conf"
+        owner: root
+        group: root
+        mode: 0644
+        backup: yes
+
+    - name: Ensure nginx restarted
+      service:
+        name: nginx
+        state: restarted
+      when: nginx_conf_changed | changed
+
+    # - name: Composer install
+    #   composer:
+    #     command: "install"
+    #     working_dir: "{{ project_dir }}"
+    #   when: env == 'vagrant'
+
+    # - name: Install packages based on package.json.(npm install)
+    #   npm: path={{ project_dir }}
+    #   when: env == 'vagrant' and force_npm_install

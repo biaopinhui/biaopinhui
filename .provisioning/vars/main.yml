@@ -1,0 +1,21 @@
+# Override MySQL PHP packages for vagrant
+# use `webtatic' repo for PHP, MySQL and Nginx
+php_enablerepo: webtatic
+php_webserver_daemon: nginx
+php_enable_php_fpm: true
+php_packages:
+  - ImageMagick
+  - php56w
+  - php56w-common
+  - php56w-devel
+  - php56w-fpm
+  - php56w-gd
+  - php56w-mbstring
+  - php56w-opcache
+  - php56w-pecl-xdebug
+  - php56w-pdo
+  - php56w-mysqlnd
+  - php56w-xml
+  - php56w-mcrypt
+  - php56w-pecl-memcached
+

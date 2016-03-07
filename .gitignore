@@ -1,0 +1,16 @@
+cache/
+
+# laravel
+/vendor
+/bootstrap/compiled.php
+.env
+
+# vagrant box
+.vagrant/
+.provisioning/roles/
+
+# node.js
+node_modules/
+
+# os
+.DS_Store
