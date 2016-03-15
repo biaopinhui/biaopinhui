@@ -1920,6 +1920,7 @@ header .top-cart-row .top-cart-holder .total-price-basket {
   line-height: 35px;
 }
 .carousel-holder .title-nav .nav-holder {
+  margin-top: 15px;
   float: right;
   display: inline-block;
 }
@@ -1931,7 +1932,7 @@ header .top-cart-row .top-cart-holder .total-price-basket {
 }
 .carousel-holder .title-nav .nav-holder:after {
   z-index: -1;
-  top: 50%;
+  top: 57%;
   position: absolute;
   left: 0;
   content: "";

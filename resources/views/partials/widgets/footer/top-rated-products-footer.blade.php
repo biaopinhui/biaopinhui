@@ -1,6 +1,6 @@
 <!-- ============================================================= TOP RATED PRODUCTS ============================================================= -->
 <div class="widget">
-    <h2>Top Rated Products</h2>
+    <h2>{{ trans('buttons.top-rated') }}</h2>
     <div class="body">
         <ul>
             <li>

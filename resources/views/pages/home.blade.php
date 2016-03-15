@@ -1,5 +1,8 @@
 @extends('layouts.master')
 
+@section('title', '标牌徽章吊牌包装 - 尽在')
+@section('description', '标品会专业生产标牌徽章吊牌包装等，应有尽有。')
+
 @section('content')
 	<div id="top-banner-and-menu">
 		<div class="container">
@@ -15,9 +18,7 @@
 		</div><!-- /.container -->
 	</div><!-- /#top-banner-and-menu -->
 
-	@include('partials.section.home-banners')
 	@include('partials.section.home-page-tabs')
 	@include('partials.section.best-sellers')
 	@include('partials.section.recently-viewed')
-	@include('partials.section.top-brands')
 @endsection

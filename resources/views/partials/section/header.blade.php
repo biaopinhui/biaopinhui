@@ -10,10 +10,6 @@
 			@include('partials.widgets.header.search-bar')
 		</div><!-- /.top-search-holder -->
 
-		<div class="col-xs-12 col-sm-12 col-md-3 top-cart-row no-margin">
-			@include('partials.widgets.header.shopping-cart-dropdown')
-		</div><!-- /.top-cart-row -->
-
 	</div><!-- /.container -->
 </header>
 <!-- ============================================================= HEADER : END ============================================================= -->

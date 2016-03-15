@@ -3,9 +3,9 @@
         <div class="tab-holder">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" >
-                <li class="active"><a href="#featured" data-toggle="tab">featured</a></li>
-                <li><a href="#new-arrivals" data-toggle="tab">new arrivals</a></li>
-                <li><a href="#top-sales" data-toggle="tab">top sales</a></li>
+                <li class="active"><a href="#featured" data-toggle="tab">{{ trans('buttons.featured') }}</a></li>
+                <li><a href="#new-arrivals" data-toggle="tab">{{ trans('buttons.new-arrivals') }}</a></li>
+                <li><a href="#top-sales" data-toggle="tab">{{ trans('buttons.top-sales') }}</a></li>
             </ul>
 
             <!-- Tab panes -->
@@ -131,7 +131,8 @@
                     <div class="loadmore-holder text-center">
                         <a class="btn-loadmore" href="#">
                             <i class="fa fa-plus"></i>
-                            load more products</a>
+                            {{ trans('buttons.load-more') }}
+                        </a>
                     </div> 
 
                 </div>
@@ -261,7 +262,8 @@
                     <div class="loadmore-holder text-center">
                         <a class="btn-loadmore" href="#">
                             <i class="fa fa-plus"></i>
-                            load more products</a>
+                            {{ trans('buttons.load-more') }}
+                        </a>
                     </div> 
 
                 </div>
@@ -393,7 +395,8 @@
                     <div class="loadmore-holder text-center">
                         <a class="btn-loadmore" href="#">
                             <i class="fa fa-plus"></i>
-                            load more products</a>
+                            {{ trans('buttons.load-more') }}
+                        </a>
                     </div> 
                 </div>
             </div>

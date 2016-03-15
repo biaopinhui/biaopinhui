@@ -1,6 +1,6 @@
 <!-- ============================================================= ON SALE PRODUCTS ============================================================= -->
 <div class="widget">
-    <h2>On-Sale Products</h2>
+    <h2>{{ trans('buttons.on-sale') }}</h2>
     <div class="body">
         <ul>
             <li>
