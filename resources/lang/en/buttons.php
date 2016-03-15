@@ -4,6 +4,7 @@ return [
 
     'home' => 'Home',
     'faq' => 'FAQ',
+    'company-intro' => 'Company Introduction',
     'contact' => 'Contact',
     'category' => 'Categories',
 
@@ -31,5 +32,12 @@ return [
     'most-important' => 'Featured Products',
     'on-sale' => 'On-Sale Products',
     'top-rated' => 'Top Rated Products',
+
+    'subscribe' => 'Subscribe',
+    'biaopinhui' => 'BPH',
+    
+    'popular-categories' => 'Popular Categories',
+    'company-info' => 'Company Infomation',
+    'friend-links' => 'Friend Links',
 
 ];

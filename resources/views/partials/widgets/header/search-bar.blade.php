@@ -1,6 +1,6 @@
 <div class="contact-row">
     <div class="phone inline">
-        <i class="fa fa-phone"></i> 15727865656 (戴), 18324263053 (王)
+        <i class="fa fa-phone"></i> 15727865656 ({{ trans('messages.seller-contact1') }}), 18324263053 ({{ trans('messages.seller-contact2') }})
     </div>
     <div class="contact inline">
         <i class="fa fa-envelope"></i> biaopinhui@126.com</span>

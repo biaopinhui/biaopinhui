@@ -4,6 +4,7 @@ return [
 
     'home' => '首页',
     'faq' => '常见问题',
+    'company-intro' => '公司简介',
     'contact' => '联系我们',
     'category' => '产品分类',
 
@@ -31,5 +32,12 @@ return [
     'most-important' => '镇店之宝',
     'on-sale' => '限时特惠',
     'top-rated' => '广受好评',
+
+    'subscribe' => '订阅',
+    'biaopinhui' => '标品汇',
+
+    'popular-categories' => '热门分类',
+    'company-info' => '公司信息',
+    'friend-links' => '友情链接',
 
 ];

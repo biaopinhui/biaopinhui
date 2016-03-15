@@ -22,8 +22,8 @@
         <div class="container">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 no-padding">
                 <form role="form">
-                    <input placeholder="Subscribe to our newsletter">
-                    <button class="le-button">Subscribe</button>
+                    <input placeholder="{{ trans('messages.subscribe-newsletter') }}">
+                    <button class="le-button">{{ trans('buttons.subscribe') }}</button>
                 </form>
             </div>
         </div><!-- /.container -->
@@ -45,18 +45,8 @@
         <div class="container">
             <div class="col-xs-12 col-sm-6 no-margin">
                 <div class="copyright">
-                    &copy; <a href="index.php?page=home">Media Center</a> - all rights reserved
+                    &copy; <a href="index.php?page=home">{{ trans('buttons.biaopinhui') }}</a> - {{ trans('messages.rights-reserved') }}
                 </div><!-- /.copyright -->
-            </div>
-            <div class="col-xs-12 col-sm-6 no-margin">
-                <div class="payment-methods ">
-                    <ul>
-                        <li><img alt="" src="assets/images/payments/payment-visa.png"></li>
-                        <li><img alt="" src="assets/images/payments/payment-master.png"></li>
-                        <li><img alt="" src="assets/images/payments/payment-paypal.png"></li>
-                        <li><img alt="" src="assets/images/payments/payment-skrill.png"></li>
-                    </ul>
-                </div><!-- /.payment-methods -->
             </div>
         </div><!-- /.container -->
     </div><!-- /.copyright-bar -->

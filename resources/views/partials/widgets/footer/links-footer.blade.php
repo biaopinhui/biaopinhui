@@ -1,7 +1,7 @@
 <!-- ============================================================= LINKS FOOTER ============================================================= -->
 <div class="link-widget">
     <div class="widget">
-        <h3>Find it fast</h3>
+        <h3>{{ trans('buttons.popular-categories') }}</h3>
         <ul>
             <li><a href="index.php?page=category-grid">laptops &amp; computers</a></li>
             <li><a href="index.php?page=category-grid">Cameras &amp; Photography</a></li>
@@ -17,7 +17,7 @@
 
 <div class="link-widget">
     <div class="widget">
-        <h3>Information</h3>
+        <h3>{{ trans('buttons.company-info') }}</h3>
         <ul>
             <li><a href="index.php?page=category-grid">Find a Store</a></li>
             <li><a href="index.php?page=category-grid">About Us</a></li>
@@ -34,7 +34,7 @@
 
 <div class="link-widget">
     <div class="widget">
-        <h3>Information</h3>
+        <h3>{{ trans('buttons.friend-links') }}</h3>
         <ul>
             <li><a href="index.php?page=category-grid">My Account</a></li>
             <li><a href="index.php?page=category-grid">Order Tracking</a></li>
