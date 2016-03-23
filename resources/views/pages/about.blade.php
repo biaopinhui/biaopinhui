@@ -1,3 +1,9 @@
+@extends('layouts.master')
+
+@section('title', '标牌徽章吊牌包装 - 尽在')
+@section('description', '标品会专业生产标牌徽章吊牌包装等，应有尽有。')
+
+@section('content')
 <!-- ========================================= MAIN ========================================= -->
 <main id="about-us">
 	<div class="container inner-top-xs inner-bottom-sm">
@@ -151,3 +157,4 @@
 	</section><!-- /#our-clients .row -->
 </main><!-- /#about-us -->
 <!-- ========================================= MAIN : END ========================================= -->
+@endsection

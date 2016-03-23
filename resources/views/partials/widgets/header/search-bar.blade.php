@@ -15,12 +15,12 @@
             <ul class="categories-filter animate-dropdown">
                 <li class="dropdown">
 
-                    <a class="dropdown-toggle"  data-toggle="dropdown" href="index.php?page=category-grid">{{ trans('buttons.all-categories') }}</a>
+                    <a class="dropdown-toggle"  data-toggle="dropdown" href="index.php?page=category-grid">{{ trans('menu.all-categories') }}</a>
 
                     <ul class="dropdown-menu" role="menu" >
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?page=category-grid">{{ trans('buttons.biaopai') }}</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?page=category-grid">{{ trans('buttons.huizhang') }}</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?page=category-grid">{{ trans('buttons.diaopai') }}</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?page=category-grid">{{ trans('menu.biaopai') }}</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?page=category-grid">{{ trans('menu.huizhang') }}</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?page=category-grid">{{ trans('menu.diaopai') }}</a></li>
 
                     </ul>
                 </li>

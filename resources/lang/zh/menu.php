@@ -8,12 +8,17 @@ return [
     'contact' => '联系我们',
     'category' => '产品分类',
 
+    'biaopai' => '标牌',
+    'huizhang' => '徽章',
+    'diaopai' => '吊牌',
+
     'chinese' => '中文',
     'english' => 'English',
 
     'register' => '注册',
     'login' => '登录',
 
+    'all-categories' => '全部分类',
     'keyword' => '请输入关键字',
 
     'featured' => '本店精品',

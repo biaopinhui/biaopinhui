@@ -43,7 +43,7 @@
 
         @include('partials.navigation.top-menu-bar')
 
-        @include('partials.section.header')
+        @include('partials.section.header-2')
 
         @yield('content')
 

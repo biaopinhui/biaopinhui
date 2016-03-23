@@ -8,12 +8,17 @@ return [
     'contact' => 'Contact',
     'category' => 'Categories',
 
+    'biaopai' => 'biaopai',
+    'huizhang' => 'huizhang',
+    'diaopai' => 'diaopai',
+
     'chinese' => '中文',
     'english' => 'English',
 
     'register' => 'Register',
     'login' => 'Login',
 
+    'all-categories' => 'All Categories',
     'keyword' => 'Search for item',
 
     'featured' => 'Featured',

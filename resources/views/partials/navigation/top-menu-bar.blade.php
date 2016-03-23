@@ -3,10 +3,9 @@
     <div class="container">
         <div class="col-xs-12 col-sm-6 no-margin">
             <ul>
-                <li><a href="/index.php?page=home">{{ trans('buttons.home') }}</a></li>
-                <li><a href="index.php?page=faq">{{ trans('buttons.company-intro') }}</a></li>
-                <li><a href="index.php?page=contact">{{ trans('buttons.contact') }}</a></li>
-                <li><a href="index.php?page=faq">{{ trans('buttons.faq') }}</a></li>
+                <li><a href="/">{{ trans('buttons.home') }}</a></li>
+                <li><a href="about">{{ trans('buttons.company-intro') }}</a></li>
+                <li><a href="faq">{{ trans('buttons.faq') }}</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#pages">{{ trans('buttons.category') }}</a>
                     <ul class="dropdown-menu" role="menu">
