@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.main')
 
 @section('title', '标牌徽章吊牌包装 - 尽在')
 @section('description', '标品会专业生产标牌徽章吊牌包装等，应有尽有。')

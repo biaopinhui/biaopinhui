@@ -21,7 +21,8 @@
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?page=category-grid">{{ trans('menu.biaopai') }}</a></li>
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?page=category-grid">{{ trans('menu.huizhang') }}</a></li>
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?page=category-grid">{{ trans('menu.diaopai') }}</a></li>
-
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?page=category-grid">{{ trans('menu.baozhuang') }}</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?page=category-grid">{{ trans('menu.yinshua') }}</a></li>
                     </ul>
                 </li>
             </ul>

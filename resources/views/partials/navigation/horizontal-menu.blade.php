@@ -23,43 +23,27 @@
                     <li class="dropdown">
                         <a href="#">{{ trans('menu.diaopai') }}</a>
                     </li>
-                    
+                            
                     <li class="dropdown">
-                        <a href="#">Games &amp; Consoles</a>
+                        <a href="#">{{ trans('menu.baozhuang') }}</a>
                     </li>
-                    
-                    
-                    <li class="dropdown yamm-fw">
-                        <a href="#">Gadgets</a>
-                    </li><!-- /.yamm-fw -->
-                    
-                    
+                            
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Phones &amp; Tablets</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Motherboard Components &amp; Accs</a></li>
-                            <li><a href="#">Power Supplies Power</a></li>
-                            <li><a href="#">Power Supply TestersSound </a></li>
-                            <li><a href="#">Sound Cards (Internal)</a></li>
-                            <li><a href="#">Video Capture &amp; TV Tuner Cards</a></li>
-                            <li><a href="#">Other</a></li>
-                        </ul>
+                        <a href="#">{{ trans('menu.yinshua') }}</a>
                     </li>
-                    
-                    
-                    <li class="dropdown hidden-md">
-                        <a href="#" class="dropdown-toggle" data-hover="dropdown">GPS &amp; Car Audio</a>
+                </ul><!-- /.navbar-nav -->
+
+                <ul class="nav navbar-nav navbar-news">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">{{ trans('menu.news-center') }}</a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Laptops &amp; Notebooks</a></li>
-                            <li><a href="#">RTV</a></li>
-                            <li><a href="#">TV &amp; Audio</a></li>
-                            <li><a href="#">Gadgets</a></li>
-                            <li><a href="#">Cameras</a></li>
+                            <li><a href="#">{{ trans('menu.biaopai-news') }}</a></li>
+                            <li><a href="#">{{ trans('menu.huizhang-news') }}</a></li>
+                            <li><a href="#">{{ trans('menu.diaopai-news') }}</a></li>
+                            <li><a href="#">{{ trans('menu.baozhuang-news') }}</a></li>
+                            <li><a href="#">{{ trans('menu.yinshua-news') }}</a></li>
+                            <li><a href="#">{{ trans('menu.other-news') }}</a></li>
                         </ul>
-                    </li>
-                    
-                    <li class="dropdown navbar-right hidden-md">
-                        <a href="#">Accessories</a>
                     </li>
                 </ul><!-- /.navbar-nav -->
             </div><!-- /.navbar-collapse -->

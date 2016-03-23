@@ -5,6 +5,7 @@
             <ul>
                 <li><a href="/">{{ trans('menu.home') }}</a></li>
                 <li><a href="about">{{ trans('menu.company-intro') }}</a></li>
+                <li><a href="contact">{{ trans('menu.contact') }}</a></li>
                 <li><a href="faq">{{ trans('menu.faq') }}</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#pages">{{ trans('menu.category') }}</a>
@@ -12,6 +13,8 @@
                         <li><a href="index.php?page=home&amp;style=alt2">{{ trans('menu.biaopai') }}</a></li>
                         <li><a href="index.php?page=home-2&amp;style=alt2">{{ trans('menu.huizhang') }}</a></li>
                         <li><a href="index.php?page=category-grid&amp;style=alt2">{{ trans('menu.diaopai') }}</a></li>
+                        <li><a href="index.php?page=category-grid&amp;style=alt2">{{ trans('menu.baozhuang') }}</a></li>
+                        <li><a href="index.php?page=category-grid&amp;style=alt2">{{ trans('menu.yinshua') }}</a></li>
                     </ul>
                 </li>
             </ul>

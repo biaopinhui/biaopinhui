@@ -1,3 +1,9 @@
+@extends('layouts.master')
+
+@section('title', '标牌徽章吊牌包装 - 尽在')
+@section('description', '标品会专业生产标牌徽章吊牌包装等，应有尽有。')
+
+@section('content')
 <!-- ========================================= MAIN ========================================= -->
 <main id="contact-us" class="inner-bottom-md">
 	<section class="google-map map-holder">
@@ -102,3 +108,4 @@
 	</div><!-- /.container -->
 </main>
 <!-- ========================================= MAIN : END ========================================= -->
+@endsection
