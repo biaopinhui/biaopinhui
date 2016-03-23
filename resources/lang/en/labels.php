@@ -2,18 +2,6 @@
 
 return [
 
-    'home' => 'Home',
-    'faq' => 'FAQ',
-    'company-intro' => 'Company Introduction',
-    'contact' => 'Contact',
-    'category' => 'Categories',
-
-    'chinese' => '中文',
-    'english' => 'English',
-
-    'register' => 'Register',
-    'login' => 'Login',
-
     'keyword' => 'Search for item',
 
     'featured' => 'Featured',

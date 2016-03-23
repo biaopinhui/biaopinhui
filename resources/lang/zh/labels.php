@@ -2,18 +2,6 @@
 
 return [
 
-    'home' => '首页',
-    'faq' => '常见问题',
-    'company-intro' => '公司简介',
-    'contact' => '联系我们',
-    'category' => '产品分类',
-
-    'chinese' => '中文',
-    'english' => 'English',
-
-    'register' => '注册',
-    'login' => '登录',
-
     'keyword' => '请输入关键字',
 
     'featured' => '本店精品',
