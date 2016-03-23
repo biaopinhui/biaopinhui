@@ -23,7 +23,7 @@
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 no-padding">
                 <form role="form">
                     <input placeholder="{{ trans('messages.subscribe-newsletter') }}">
-                    <button class="le-button">{{ trans('buttons.subscribe') }}</button>
+                    <button class="le-button">{{ trans('labels.subscribe') }}</button>
                 </form>
             </div>
         </div><!-- /.container -->
@@ -45,7 +45,7 @@
         <div class="container">
             <div class="col-xs-12 col-sm-6 no-margin">
                 <div class="copyright">
-                    &copy; <a href="index.php?page=home">{{ trans('buttons.biaopinhui') }}</a> - {{ trans('messages.rights-reserved') }}
+                    &copy; <a href="index.php?page=home">{{ trans('labels.biaopinhui') }}</a> - {{ trans('messages.rights-reserved') }}
                 </div><!-- /.copyright -->
             </div>
         </div><!-- /.container -->

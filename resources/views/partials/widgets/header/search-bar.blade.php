@@ -10,7 +10,7 @@
 <div class="search-area">
     <form>
         <div class="control-group">
-            <input class="search-field" placeholder="{{ trans('buttons.keyword') }}" />
+            <input class="search-field" placeholder="{{ trans('labels.keyword') }}" />
 
             <ul class="categories-filter animate-dropdown">
                 <li class="dropdown">

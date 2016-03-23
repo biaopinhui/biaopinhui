@@ -1,6 +1,6 @@
 <!-- ============================================================= FEATURED PRODUCTS ============================================================= -->
 <div class="widget">
-    <h2>{{ trans('buttons.most-important') }}</h2>
+    <h2>{{ trans('labels.most-important') }}</h2>
     <div class="body">
         <ul>
             <li>
