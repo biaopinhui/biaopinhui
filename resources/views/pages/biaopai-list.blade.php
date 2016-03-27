@@ -1,19 +1,18 @@
-<?php
-    $isListView = isset($_GET['view']) && ($_GET['view'] == 'list') ? true : false;
-?>
+@extends('layouts.main')
+
+@section('title', '标牌徽章吊牌包装 - 尽在')
+@section('description', '标品会专业生产标牌徽章吊牌包装等，应有尽有。')
+
+@section('content')
+@include('partials/breadcrumb/breadcrumb-biaopai')
+
 <section id="category-grid">
     <div class="container">
         
         <!-- ========================================= SIDEBAR ========================================= -->
         <div class="col-xs-12 col-sm-3 no-margin sidebar narrow">
 
-            <?php require MC_ROOT.'/parts/widgets/sidebar/product-filter.php';?>
-
-            <?php require MC_ROOT.'/parts/widgets/sidebar/special-offers.php';?>
-
-            <?php require MC_ROOT.'/parts/widgets/sidebar/sidebar-banner.php';?>
-
-            <?php require MC_ROOT.'/parts/widgets/sidebar/featured-products.php';?>
+            @include('partials/widgets/sidebar/product-filter')
 
         </div>
         <!-- ========================================= SIDEBAR : END ========================================= -->
@@ -22,11 +21,12 @@
 
         <div class="col-xs-12 col-sm-9 no-margin wide sidebar">
 
-            <?php require MC_ROOT.'/parts/section/recommended-products.php';?>
+           @include('/partials/section/recommended-products')
             
-            <?php require MC_ROOT.'/parts/section/category-products.php';?>
+           @include('/partials/section/category-products')
             
         </div><!-- /.col -->
         <!-- ========================================= CONTENT : END ========================================= -->    
     </div><!-- /.container -->
 </section><!-- /#category-grid -->
+@endsection

@@ -27,6 +27,10 @@ Route::get('/faq', function () {
     return view('pages.faq');
 });
 
+Route::get('/biaopai', function () {
+    return view('pages.biaopai-list');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

@@ -21,14 +21,14 @@
 
             <div class="grid-list-buttons">
                 <ul>
-                    <li class="grid-list-button-item <?php if(!$isListView) echo 'active';?>"><a data-toggle="tab" href="#grid-view"><i class="fa fa-th-large"></i> Grid</a></li>
-                    <li class="grid-list-button-item <?php if($isListView) echo 'active';?>"><a data-toggle="tab" href="#list-view"><i class="fa fa-th-list"></i> List</a></li>
+                    <li class="grid-list-button-item active"><a data-toggle="tab" href="#grid-view"><i class="fa fa-th-large"></i> Grid</a></li>
+                    <li class="grid-list-button-item"><a data-toggle="tab" href="#list-view"><i class="fa fa-th-list"></i> List</a></li>
                 </ul>
             </div>
         </div><!-- /.control-bar -->
                                 
         <div class="tab-content">
-            <div id="grid-view" class="products-grid fade tab-pane <?php if(!$isListView) echo 'in active';?>">
+            <div id="grid-view" class="products-grid fade tab-pane in active">
                 
                 <div class="product-grid-holder">
                     <div class="row no-margin">
@@ -319,7 +319,7 @@
                 </div><!-- /.pagination-holder -->
             </div><!-- /.products-grid #grid-view -->
 
-            <div id="list-view" class="products-grid fade tab-pane <?php if($isListView) echo 'active in';?>">
+            <div id="list-view" class="products-grid fade tab-pane">
                 <div class="products-list">
                     
                     <div class="product-item product-item-holder">

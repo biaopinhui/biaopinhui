@@ -22,5 +22,7 @@ return [
     'popular-categories' => '热门分类',
     'company-info' => '公司信息',
     'friend-links' => '友情链接',
+    'categorize-by-usage' => '按用途分类',
+    'product-filters' => '产品过滤器',
 
 ];

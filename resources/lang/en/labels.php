@@ -22,5 +22,7 @@ return [
     'popular-categories' => 'Popular Categories',
     'company-info' => 'Company Infomation',
     'friend-links' => 'Friend Links',
+    'categorize-by-usage' => 'Catigorize By Usage',
+    'product-filters' => 'Product Filters',
 
 ];

@@ -13,7 +13,7 @@
             <div class="collapse navbar-collapse" id="mc-horizontal-menu-collapse">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a href="#">{{ trans('menu.biaopai') }}</a>
+                        <a href="/biaopai">{{ trans('menu.biaopai') }}</a>
                     </li>
                             
                     <li class="dropdown">
