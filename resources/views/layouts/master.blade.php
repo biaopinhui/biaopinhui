@@ -13,7 +13,7 @@
         <title>@yield('title') - 标品汇</title>
 
         <!-- Bootstrap Core CSS -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
         
         <!-- Customizable CSS -->
         <link rel="stylesheet" href="assets/css/main.css">

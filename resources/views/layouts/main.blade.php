@@ -13,7 +13,7 @@
         <title>@yield('title') - 标品汇</title>
 
         <!-- Bootstrap Core CSS -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
         
         <!-- Customizable CSS -->
         <link rel="stylesheet" href="assets/css/main.css">
@@ -52,9 +52,9 @@
     </div><!-- /.wrapper -->
 
     <!-- JavaScripts placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery-1.10.2.min.js"></script>
-    <script src="assets/js/jquery-migrate-1.2.1.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <!-- <script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script> -->
     <script src="assets/js/gmap3.min.js"></script>
     <script src="assets/js/bootstrap-hover-dropdown.min.js"></script>

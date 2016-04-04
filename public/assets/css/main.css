@@ -1057,15 +1057,6 @@ header .top-cart-row .top-cart-holder .total-price-basket {
 .sidemenu-holder .side-menu nav .nav > li:nth-child(2n) {
   background-color: #F9F9F9;
 }
-/*===================================================================================*/
-/*  Megamenu
-/*===================================================================================*/
-/*!
- * Yamm!3
- * Yet another megamenu for Bootstrap 3
- * 
- * http://geedmo.github.com/yamm3
- */
 .yamm .nav,
 .yamm .collapse,
 .yamm .dropup,

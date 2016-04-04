@@ -7,6 +7,17 @@ module.exports = function(grunt) {
           'public/assets/css/app.css': 'resources/assets/less/app.less',
           'public/assets/css/main.css': 'resources/assets/less/main.less'
         }
+      },
+      prod: {
+        options: {
+          plugins: [
+            new (require('less-plugin-clean-css'))()
+          ]
+        },
+        files: {
+          'public/assets/css/app.css': 'resources/assets/less/app.less',
+          'public/assets/css/main.css': 'resources/assets/less/main.less'
+        }
       }
     },
     watch: {
@@ -18,6 +29,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['less']);
+  grunt.registerTask('default', ['less:dev']);
 
 };
