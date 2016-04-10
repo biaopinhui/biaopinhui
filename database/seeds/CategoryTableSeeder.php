@@ -18,18 +18,18 @@ class CategoryTableSeeder extends Seeder
         DB::table('categories')->insert(['name' => 'yinshua']);
 
         // Seed sub categories for biaopai
-        DB::table('categories')->insert(['name' => 'bp-anquan', 'parent_id' => 1]);
-        DB::table('categories')->insert(['name' => 'bp-dianli', 'parent_id' => 1]);
-        DB::table('categories')->insert(['name' => 'bp-gonglu', 'parent_id' => 1]);
-        DB::table('categories')->insert(['name' => 'bp-jiangpai', 'parent_id' => 1]);
-        DB::table('categories')->insert(['name' => 'bp-keshi', 'parent_id' => 1]);
-        DB::table('categories')->insert(['name' => 'bp-yakeli', 'parent_id' => 1]);
-        DB::table('categories')->insert(['name' => 'bp-caoping', 'parent_id' => 1]);
-        DB::table('categories')->insert(['name' => 'bp-famen', 'parent_id' => 1]);
-        DB::table('categories')->insert(['name' => 'bp-gongshilan', 'parent_id' => 1]);
-        DB::table('categories')->insert(['name' => 'bp-cheku', 'parent_id' => 1]);
-        DB::table('categories')->insert(['name' => 'bp-jiaxiao', 'parent_id' => 1]);
-        DB::table('categories')->insert(['name' => 'bp-jiashiyuan', 'parent_id' => 1]);
-        DB::table('categories')->insert(['name' => 'bp-qiche', 'parent_id' => 1]);
+        DB::table('categories')->insert(['name' => 'anquan', 'parent_id' => 1]);
+        DB::table('categories')->insert(['name' => 'dianli', 'parent_id' => 1]);
+        DB::table('categories')->insert(['name' => 'gonglu', 'parent_id' => 1]);
+        DB::table('categories')->insert(['name' => 'jiangpai', 'parent_id' => 1]);
+        DB::table('categories')->insert(['name' => 'keshi', 'parent_id' => 1]);
+        DB::table('categories')->insert(['name' => 'yakeli', 'parent_id' => 1]);
+        DB::table('categories')->insert(['name' => 'caoping', 'parent_id' => 1]);
+        DB::table('categories')->insert(['name' => 'famen', 'parent_id' => 1]);
+        DB::table('categories')->insert(['name' => 'gongshilan', 'parent_id' => 1]);
+        DB::table('categories')->insert(['name' => 'cheku', 'parent_id' => 1]);
+        DB::table('categories')->insert(['name' => 'jiaxiao', 'parent_id' => 1]);
+        DB::table('categories')->insert(['name' => 'jiashiyuan', 'parent_id' => 1]);
+        DB::table('categories')->insert(['name' => 'qiche', 'parent_id' => 1]);
     }
 }
