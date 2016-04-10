@@ -24,6 +24,7 @@ class CreateInitialTables extends Migration
             $table->increments('id');
             $table->string('name', 50);
             $table->string('title', 200);
+            $table->float('price');
             $table->text('description');
         });
 

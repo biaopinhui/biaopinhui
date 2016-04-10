@@ -9,57 +9,57 @@
             <ul>
                 <li>
                     <input class="le-checkbox" type="checkbox"  />
-                    <label>{{ trans('menu.yinshua-series') }}</label>
+                    <label>{{ trans('menu.series-yinshua') }}</label>
                     <span class="pull-right">(2)</span>
                 </li>
                 <li>
                     <input class="le-checkbox" type="checkbox"  />
-                    <label>{{ trans('menu.siyin-series') }}</label>
+                    <label>{{ trans('menu.series-siyin') }}</label>
                     <span class="pull-right">(8)</span>
                 </li>
                 <li>
                     <input class="le-checkbox" type="checkbox"  />
-                    <label>{{ trans('menu.fushi-series') }}</label>
+                    <label>{{ trans('menu.series-fushi') }}</label>
                     <span class="pull-right">(2)</span>
                 </li>
                 <li>
                     <input class="le-checkbox" type="checkbox"  />
-                    <label>{{ trans('menu.fanguang-series') }}</label>
+                    <label>{{ trans('menu.series-fanguang') }}</label>
                     <span class="pull-right">(4)</span>
                 </li>
                 <li>
                     <input class="le-checkbox" type="checkbox"  />
-                    <label>{{ trans('menu.yeguang-series') }}</label>
+                    <label>{{ trans('menu.series-yeguang') }}</label>
                     <span class="pull-right">(2)</span>
                 </li>
                 <li>
                     <input class="le-checkbox" type="checkbox"  />
-                    <label>{{ trans('menu.chongya-series') }}</label>
+                    <label>{{ trans('menu.series-chongya') }}</label>
                     <span class="pull-right">(6)</span>
                 </li>
                 <li>
                     <input class="le-checkbox" type="checkbox"  />
-                    <label>{{ trans('menu.duxinban-series') }}</label>
+                    <label>{{ trans('menu.series-duxinban') }}</label>
                     <span class="pull-right">(5)</span>
                 </li>
                 <li>
                     <input class="le-checkbox" type="checkbox"  />
-                    <label>{{ trans('menu.buxiugang-series') }}</label>
+                    <label>{{ trans('menu.series-buxiugang') }}</label>
                     <span class="pull-right">(2)</span>
                 </li>
                 <li>
                     <input class="le-checkbox" type="checkbox"  />
-                    <label>{{ trans('menu.penhui-series') }}</label>
+                    <label>{{ trans('menu.series-penhui') }}</label>
                     <span class="pull-right">(9)</span>
                 </li>
                 <li>
                     <input class="le-checkbox" type="checkbox"  />
-                    <label>{{ trans('menu.lvban-series') }}</label>
+                    <label>{{ trans('menu.series-lvban') }}</label>
                     <span class="pull-right">(3)</span>
                 </li>
                 <li>
                     <input class="le-checkbox" type="checkbox"  />
-                    <label>{{ trans('menu.yakeli-series') }}</label>
+                    <label>{{ trans('menu.series-yakeli') }}</label>
                     <span class="pull-right">(2)</span>
                 </li>
             </ul>

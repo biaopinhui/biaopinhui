@@ -9,19 +9,19 @@
                     </a>
                     
                     <ul class="dropdown-menu">
-                        <li><a href="#">{{ trans('menu.anquan-bp') }}</a></li>
-                        <li><a href="#">{{ trans('menu.dianli-bp') }}</a></li>
-                        <li><a href="#">{{ trans('menu.gonglu-bp') }}</a></li>
-                        <li><a href="#">{{ trans('menu.jiangpai-bp') }}</a></li>
-                        <li><a href="#">{{ trans('menu.keshi-bp') }}</a></li>
-                        <li><a href="#">{{ trans('menu.yakeli-bp') }}</a></li>
-                        <li><a href="#">{{ trans('menu.caodi-bp') }}</a></li>
-                        <li><a href="#">{{ trans('menu.famen-bp') }}</a></li>
-                        <li><a href="#">{{ trans('menu.gongshilan-bp') }}</a></li>
-                        <li><a href="#">{{ trans('menu.dixiacheku-bp') }}</a></li>
-                        <li><a href="#">{{ trans('menu.jiaxiao-bp') }}</a></li>
-                        <li><a href="#">{{ trans('menu.jiashiyuan-bp') }}</a></li>
-                        <li><a href="#">{{ trans('menu.qiche-bp') }}</a></li>
+                        <li><a href="#">{{ trans('menu.bp-anquan') }}</a></li>
+                        <li><a href="#">{{ trans('menu.bp-dianli') }}</a></li>
+                        <li><a href="#">{{ trans('menu.bp-gonglu') }}</a></li>
+                        <li><a href="#">{{ trans('menu.bp-jiangpai') }}</a></li>
+                        <li><a href="#">{{ trans('menu.bp-keshi') }}</a></li>
+                        <li><a href="#">{{ trans('menu.bp-yakeli') }}</a></li>
+                        <li><a href="#">{{ trans('menu.bp-caodi') }}</a></li>
+                        <li><a href="#">{{ trans('menu.bp-famen') }}</a></li>
+                        <li><a href="#">{{ trans('menu.bp-gongshilan') }}</a></li>
+                        <li><a href="#">{{ trans('menu.bp-dixiacheku') }}</a></li>
+                        <li><a href="#">{{ trans('menu.bp-jiaxiao') }}</a></li>
+                        <li><a href="#">{{ trans('menu.bp-jiashiyuan') }}</a></li>
+                        <li><a href="#">{{ trans('menu.bp-qiche') }}</a></li>
                     </ul>
                 </li>
 

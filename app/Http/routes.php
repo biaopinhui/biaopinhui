@@ -27,9 +27,12 @@ Route::get('/faq', function () {
     return view('pages.faq');
 });
 
-Route::get('/biaopai', function () {
-    return view('pages.biaopai-list');
-});
+Route::get('/{category_name?}/{sub_category_name?}', [
+	'uses' => 'ProductController@index'
+])->where([
+	'category_name' => '(biaopai|huizhang|diaopai|baozhuang|yinshua)',
+	'sub_category_name' => '[a-z]+'
+]);
 
 /*
 |--------------------------------------------------------------------------

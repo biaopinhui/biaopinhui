@@ -16,7 +16,8 @@ class ProductTableSeeder extends Seeder
         	for ($i = $c * 10 -59; $i < $c * 10 - 49; $i++) {
     	        DB::table('products')->insert([
     	        	'name' => 'bp-product' . $i,
-    	        	'title' => '标牌 - 产品' . $i,
+                    'title' => '标牌 - 产品' . $i,
+    	        	'price' => $c - 5,
     	        	'description' => '这是第' . $i . '个标牌产品'
     	        ]);
 
