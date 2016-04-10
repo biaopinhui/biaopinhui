@@ -11,7 +11,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#pages">{{ trans('menu.category') }}</a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="/biaopai">{{ trans('menu.biaopai') }}</a></li>
-                        <li><a href="/huizhuang">{{ trans('menu.huizhang') }}</a></li>
+                        <li><a href="/huizhang">{{ trans('menu.huizhang') }}</a></li>
                         <li><a href="/diaopai">{{ trans('menu.diaopai') }}</a></li>
                         <li><a href="/baozhuang">{{ trans('menu.baozhuang') }}</a></li>
                         <li><a href="/yinshua">{{ trans('menu.yinshua') }}</a></li>
