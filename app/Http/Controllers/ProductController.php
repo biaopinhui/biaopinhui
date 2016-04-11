@@ -33,9 +33,10 @@ class ProductController extends Controller
         $products = Product::
             join('category_product', 'products.id', '=', 'category_product.product_id')
             ->whereIn('category_id', $categoryIds)
+            ->take(12)
             ->get();
 
-        return view('pages.biaopai-list');
+        return view('pages.biaopai-list')->with('products', $products);
     }
 
     /**

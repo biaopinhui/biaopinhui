@@ -2437,7 +2437,7 @@ header .top-cart-row .top-cart-holder .total-price-basket {
 }
 .product-item-holder.hover:hover .hover-area,
 .product-item-holder.hover.test .hover-area {
-  display: block;
+  /*display: block;*/
 }
 .product-grid-holder .row:nth-child(n+2) .product-item-holder {
   border-top: 0;

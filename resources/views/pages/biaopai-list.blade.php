@@ -20,8 +20,6 @@
         <!-- ========================================= CONTENT ========================================= -->
 
         <div class="col-xs-12 col-sm-9 no-margin wide sidebar">
-
-           @include('/partials/section/recommended-products')
             
            @include('/partials/section/category-products')
             
