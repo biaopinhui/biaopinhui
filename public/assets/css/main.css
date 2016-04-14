@@ -552,9 +552,6 @@ label.error {
 .pagination {
   margin: 17px 0;
 }
-.pagination li:last-child a {
-  padding: 9px 32px!important;
-}
 .pagination li:hover a,
 .pagination li.current a {
   background-color: #fff;
@@ -2426,18 +2423,22 @@ header .top-cart-row .top-cart-holder .total-price-basket {
   top: 50%;
   left: 0;
 }
+.product-item-holder.hover:hover,
+.product-item-holder.hover.test {
+  box-shadow: 0px 0px 5px 0px #c6c6c6;
+  z-index: 200;
+}
 .product-item-holder.hover:hover .product-item,
 .product-item-holder.hover.test .product-item {
   width: 100%;
   position: absolute;
   padding-bottom: 2%;
-  box-shadow: 0px 0px 5px 0px #c6c6c6;
   z-index: 200;
   background-color: #fff;
 }
 .product-item-holder.hover:hover .hover-area,
 .product-item-holder.hover.test .hover-area {
-  /*display: block;*/
+  display: block;
 }
 .product-grid-holder .row:nth-child(n+2) .product-item-holder {
   border-top: 0;
@@ -2461,7 +2462,7 @@ header .top-cart-row .top-cart-holder .total-price-basket {
 }
 .product-grid-holder .product-item-holder .body {
   margin: 0 34px ;
-  min-height: 107px;
+  min-height: 60px;
   border-bottom: 1px solid #ececec;
 }
 .product-grid-holder .product-item-holder.size-big .body {
@@ -2659,7 +2660,7 @@ header .top-cart-row .top-cart-holder .total-price-basket {
   border-right: 0;
 }
 .grid-list-products .product-grid-holder .product-item-holder {
-  min-height: 410px;
+  min-height: 350px;
   border: 1px solid #ececec;
   border-top: 0;
   border-left: 0;

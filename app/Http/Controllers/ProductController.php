@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Models\Category;
 use App\Models\Product;
+use App\Presenters\BphPresenter;
 
 class ProductController extends Controller
 {
@@ -33,10 +34,14 @@ class ProductController extends Controller
         $products = Product::
             join('category_product', 'products.id', '=', 'category_product.product_id')
             ->whereIn('category_id', $categoryIds)
-            ->take(12)
-            ->get();
+            ->paginate(6);
 
-        return view('pages.biaopai-list')->with('products', $products);
+        $pagination = (new BphPresenter($products))->render();
+
+        return view('pages.biaopai-list')->with([
+            'products' => $products,
+            'pagination' => $pagination
+        ]);
     }
 
     /**

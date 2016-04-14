@@ -22,7 +22,7 @@ module.exports = function(grunt) {
     },
     watch: {
       files: 'resources/assets/less/*.less',
-      tasks: ['less']
+      tasks: ['less:dev']
     }
   });
 
