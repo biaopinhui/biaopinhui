@@ -10,4 +10,9 @@ class Product extends Model
     {
         return $this->belongsToMany('App\Models\Category');
     }
+
+    public function isOnSale()
+    {
+        return !empty($this->original_price);
+    }
 }

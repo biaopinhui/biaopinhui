@@ -3,7 +3,7 @@
         <div class="star-holder inline"><div class="star" data-score="4"></div></div>
         <div class="availability"><label>Availability:</label><span class="available">  in stock</span></div>
 
-        <div class="title"><a href="#">VAIO fit laptop - windows 8 SVF14322CXW</a></div>
+        <div class="title"><a href="#">{{ $product->title }}</a></div>
         <div class="brand">sony</div>
 
         <div class="social-row">
@@ -18,12 +18,14 @@
         </div>
 
         <div class="excerpt">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare turpis non risus semper dapibus. Quisque eu vehicula turpis. Donec sodales lacinia eros, sit amet auctor tellus volutpat non.</p>
+            <p>{{ $product->excerpt }}</p>
         </div>
         
         <div class="prices">
-            <div class="price-current">$1740.00</div>
-            <div class="price-prev">$2199.00</div>
+            <div class="price-current">{{ money_format('¥%.2n', $product->price) }}</div>
+            @if ($product->isOnsale())
+            <div class="price-prev">{{ money_format('¥%.2n', $product->original_price) }}</div>
+            @endif
         </div>
 
         <div class="qnt-holder">

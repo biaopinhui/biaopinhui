@@ -34,6 +34,12 @@ Route::get('/{category_name?}/{sub_category_name?}', [
 	'sub_category_name' => '[a-z]+'
 ]);
 
+Route::get('/{product_id}', [
+	'uses' => 'ProductController@show'
+])->where([
+	'product_id' => '[\d]+'
+]);
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

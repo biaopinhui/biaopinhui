@@ -7,16 +7,25 @@
                         @foreach ($products as $product)
                         <div class="col-xs-12 col-sm-4 no-margin product-item-holder hover">
                             <div class="product-item">
+                                @if ($product->isOnSale())
+                                <div class="ribbon red"><span>sale</span></div>
+                                @endif
                                 <div class="image">
-                                    <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-01.jpg" />
+                                    <img alt="" src="assets/images/blank.gif"
+                                        data-echo="{{ asset('assets/images/products/product-01.jpg') }}" />
                                 </div>
                                 <div class="body">
                                     <!-- <div class="label-discount green">-50% sale</div> -->
                                     <div class="title">
-                                        <a href="index.php?page=single-product">{{ $product->title }}</a>
+                                        <a href="{{ url($product->id) }}">{{ $product->title }}</a>
                                     </div>
                                 </div>
                                 <div class="prices">
+                                    <div class="price-prev">
+                                        @if ($product->isOnSale())
+                                            {{ money_format('¥%.2n', $product->original_price) }}
+                                        @endif
+                                    </div>
                                     <div class="price-current pull-right">
                                         {{ money_format('¥%.2n', $product->price) }}
                                     </div>

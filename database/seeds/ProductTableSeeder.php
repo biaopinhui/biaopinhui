@@ -17,8 +17,10 @@ class ProductTableSeeder extends Seeder
     	        DB::table('products')->insert([
     	        	'name' => 'bp-product' . $i,
                     'title' => '标牌 - 产品' . $i,
-    	        	'price' => $c - 5,
-    	        	'description' => '这是第' . $i . '个标牌产品'
+                    'price' => $c - 5,
+    	        	'original_price' => $i % 4 === 0 ? $c - 4.5 : null,
+                    'excerpt' => '这是第' . $i . '个标牌产品的摘要',
+    	        	'description' => '这是第' . $i . '个标牌产品的详细描述'
     	        ]);
 
                 DB::table('category_product')->insert([

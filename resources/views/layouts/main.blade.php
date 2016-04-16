@@ -69,5 +69,7 @@
     <script src="{{ env('BPH_CDN') }}assets/js/wow.min.js"></script>
     <script src="{{ env('BPH_CDN') }}assets/js/scripts.js"></script>
 
+    <!-- <script src="http://w.sharethis.com/button/buttons.js"></script> -->
+
 </body>
 </html>

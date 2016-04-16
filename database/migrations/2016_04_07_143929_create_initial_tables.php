@@ -25,6 +25,8 @@ class CreateInitialTables extends Migration
             $table->string('name', 50);
             $table->string('title', 200);
             $table->float('price');
+            $table->float('original_price')->nullable();
+            $table->text('excerpt');
             $table->text('description');
         });
 
