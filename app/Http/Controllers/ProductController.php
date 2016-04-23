@@ -15,18 +15,23 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($categoryName, $subCategoryName = null)
+    public function index($categorySlug, $subCategorySlug = null)
     {
-        $mainCategory = Category::where('name', $categoryName)->firstOrFail();
+        $mainCategory = Category::where([
+            'slug' => $categorySlug,
+            'main' => 1
+        ])->firstOrFail();
+        $currentCategoryId = $mainCategory->id;
 
-        if (!is_null($subCategoryName)) {
+        if (!is_null($subCategorySlug)) {
             $subCategory = Category::where([
-                'name' => $subCategoryName,
-                'parent_id' => $mainCategory->id
+                'slug' => $subCategorySlug,
+                'parent_id' => $mainCategory->id,
+                'main' => 1
             ])->firstOrFail();
 
-            $currentCategory = $subCategory;
             $categoryIds = [$subCategory->id];
+            $currentCategoryId = $subCategory->id;
         } else {
             $categoryIds = $mainCategory->subCategories->pluck('id')->all();
         }
@@ -38,7 +43,20 @@ class ProductController extends Controller
 
         $pagination = (new BphPresenter($products))->render();
 
+        // Generate breadcrumb data
+        $categoryChain = Category::getChain($currentCategoryId);
+        $breadcrumb = [];
+        $url = '';
+        foreach ($categoryChain as $category) {
+            $url .= '/' . $category->slug;
+            $breadcrumb[] = [
+                'title' => $category->name,
+                'url' => url($url)
+            ];
+        }
+
         return view('pages.biaopai-list')->with([
+            'breadcrumb' => $breadcrumb,
             'products' => $products,
             'pagination' => $pagination
         ]);
@@ -53,8 +71,27 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
+        $category = $product->categories->where('main', 1)->first();
+
+        // Generate breadcrumb data
+        $categoryChain = Category::getChain($category->id);
+        $breadcrumb = [];
+        $url = '';
+        foreach ($categoryChain as $category) {
+            $url .= '/' . $category->slug;
+            $breadcrumb[] = [
+                'title' => $category->name,
+                'url' => url($url)
+            ];
+        }
+
+        $breadcrumb[] = [
+            'title' => $product->title,
+            'url' => url($product->id)
+        ];
 
         return view('pages.single-product')->with([
+            'breadcrumb' => $breadcrumb,
             'product' => $product
         ]);
     }

@@ -15,4 +15,22 @@ class Category extends Model
     {
         return $this->belongsToMany('App\Models\Product');
     }
+
+    static public function getChain($id)
+    {
+    	$chain = [];
+
+    	while (true) {
+    		$category = Category::find($id);
+    		array_unshift($chain, $category);
+
+    		if ($category->parent_id) {
+    			$id = $category->parent_id;
+    		} else {
+    			break;
+    		}
+    	}
+        
+        return $chain;
+    }
 }

@@ -15,8 +15,10 @@ class CreateInitialTables extends Migration
 
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('slug', 20);
             $table->string('name', 50);
             $table->integer('parent_id')->nullable();
+            $table->boolean('main');
             $table->index('parent_id', 'parent_id');
         });
 
