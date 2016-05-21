@@ -24,5 +24,7 @@ return [
     'friend-links' => 'Friend Links',
     'categorize-by-usage' => 'Catigorize By Usage',
     'product-filters' => 'Product Filters',
+    'price' => 'Price',
+    'filter' => 'Filter',
 
 ];

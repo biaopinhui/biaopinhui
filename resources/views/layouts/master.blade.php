@@ -67,6 +67,7 @@
     <script src="{{ env('BPH_CDN') }}assets/js/jquery.customSelect.min.js"></script>
     <script src="{{ env('BPH_CDN') }}assets/js/wow.min.js"></script>
     <script src="{{ env('BPH_CDN') }}assets/js/scripts.js"></script>
+    <script src="{{ env('BPH_CDN') }}assets/js/bph.js"></script>
 
 </body>
 </html>

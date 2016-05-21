@@ -24,5 +24,7 @@ return [
     'friend-links' => '友情链接',
     'categorize-by-usage' => '按用途分类',
     'product-filters' => '产品过滤器',
+    'price' => '价格',
+    'filter' => '过滤',
 
 ];
