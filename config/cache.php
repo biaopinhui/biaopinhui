@@ -78,4 +78,6 @@ return [
 
     'prefix' => 'laravel',
 
+    'timeout' => 60,
+
 ];

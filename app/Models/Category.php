@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Cache;
 
 class Category extends Model
 {
@@ -18,18 +19,23 @@ class Category extends Model
 
     static public function getChain($id)
     {
-    	$chain = [];
+        $cacheKey = 'getSeries_' . $id;
+        if (!($chain = Cache::get($cacheKey))) {
+        	$chain = [];
 
-    	while (true) {
-    		$category = Category::find($id);
-    		array_unshift($chain, $category);
+        	while (true) {
+        		$category = Category::find($id);
+        		array_unshift($chain, $category);
 
-    		if ($category->parent_id) {
-    			$id = $category->parent_id;
-    		} else {
-    			break;
-    		}
-    	}
+        		if ($category->parent_id) {
+        			$id = $category->parent_id;
+        		} else {
+        			break;
+        		}
+        	}
+
+            Cache::put($cacheKey, $chain, config('cache.timeout'));
+        }
         
         return $chain;
     }

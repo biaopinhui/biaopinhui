@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Product;
+use Cache;
 
 class Filter extends Model
 {
@@ -14,16 +15,21 @@ class Filter extends Model
 
     static public function getSeries($categoryId, $conditions = [])
     {
-    	$series = Filter::where([
-    		'type' => 'series',
-    		'category_id' => $categoryId
-    	])->get();
+        $cacheKey = 'getSeries_' . $categoryId . '_' . md5(serialize($conditions));
+        if (!($series = Cache::get($cacheKey))) {
+        	$series = Filter::where([
+        		'type' => 'series',
+        		'category_id' => $categoryId
+        	])->get();
 
-    	// Get product count for each series
-    	foreach ($series as $key => $value) {
-    		$conditions['series'] = [$value->id];
-    		$series[$key]['productCount'] = Product::getProducts($conditions)->total();
-    	}
+        	// Get product count for each series
+        	foreach ($series as $key => $value) {
+        		$conditions['series'] = [$value->id];
+        		$series[$key]['productCount'] = Product::getProducts($conditions)->total();
+        	}
+
+            Cache::put($cacheKey, $series, config('cache.timeout'));
+        }
 
         return $series;
     }
