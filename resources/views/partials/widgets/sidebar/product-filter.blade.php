@@ -10,7 +10,7 @@
                 <li>
                     <input class="le-checkbox" type="checkbox"  />
                     <label>{{ trans('menu.series-yinshua') }}</label>
-                    <span class="pull-right">(2)</span>
+                    <a href="{{ url('/biaopai/dianli') . '?sub-categories=19' }}"><span class="pull-right">(2)</span></a>
                 </li>
                 <li>
                     <input class="le-checkbox" type="checkbox"  />

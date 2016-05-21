@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Requests;
 use App\Models\Category;
 use App\Models\Product;
 use App\Presenters\BphPresenter;
+use Request;
 
 class ProductController extends Controller
 {
@@ -18,16 +17,14 @@ class ProductController extends Controller
     public function index($categorySlug, $subCategorySlug = null)
     {
         $mainCategory = Category::where([
-            'slug' => $categorySlug,
-            'main' => 1
+            'slug' => $categorySlug
         ])->firstOrFail();
         $currentCategoryId = $mainCategory->id;
 
         if (!is_null($subCategorySlug)) {
             $subCategory = Category::where([
                 'slug' => $subCategorySlug,
-                'parent_id' => $mainCategory->id,
-                'main' => 1
+                'parent_id' => $mainCategory->id
             ])->firstOrFail();
 
             $categoryIds = [$subCategory->id];
@@ -36,11 +33,19 @@ class ProductController extends Controller
             $categoryIds = $mainCategory->subCategories->pluck('id')->all();
         }
 
-        $products = Product::
-            join('category_product', 'products.id', '=', 'category_product.product_id')
-            ->whereIn('category_id', $categoryIds)
-            ->paginate(6);
+        $filters = [];
+            
+        if (Request::has('series')) {
+            $series = Request::get('series');
+            $series = explode('-', $series);
+            $filters['series'] = $series;
+        }
 
+        $products = (new Product())->getProducts($categoryIds, $filters);
+
+        if (Request::has('series')) {
+            $products->appends(['series' => Request::get('series')]);
+        }
         $pagination = (new BphPresenter($products))->render();
 
         // Generate breadcrumb data
@@ -71,7 +76,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-        $category = $product->categories->where('main', 1)->first();
+        $category = $product->categories->first();
 
         // Generate breadcrumb data
         $categoryChain = Category::getChain($category->id);

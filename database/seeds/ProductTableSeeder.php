@@ -27,6 +27,12 @@ class ProductTableSeeder extends Seeder
                     'category_id' => $c,
                     'product_id' => $i
                 ]);
+
+                $filteId = floor(($i - 1) % 10 / 2);
+                DB::table('filter_product')->insert([
+                    'filter_id' => $filteId + 1,
+                    'product_id' => $i
+                ]);
             }
     	}
     }

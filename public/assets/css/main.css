@@ -4499,6 +4499,9 @@ header .top-cart-row .top-cart-holder .total-price-basket {
   margin: 0 0 3px;
   line-height: 20px;
 }
+.sidebar .widget .category-filter ul .le-checkbox {
+  width: 90%;
+}
 /*===================================================================================*/
 /*  Footer
 /*===================================================================================*/
