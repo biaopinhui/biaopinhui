@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-xs-4 col-sm-4 no-margin">
                     <a href="#" class="thumb-holder">
-                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-01.jpg" />
+                        <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-small-01.jpg" />
                     </a>
                 </div>
                 <div class="col-xs-8 col-sm-8 no-margin">
@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-xs-4 col-sm-4 no-margin">
                     <a href="#" class="thumb-holder">
-                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-02.jpg" />
+                        <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-small-02.jpg" />
                     </a>
                 </div>
                 <div class="col-xs-8 col-sm-8 no-margin">
@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-xs-4 col-sm-4 no-margin">
                     <a href="#" class="thumb-holder">
-                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-03.jpg" />
+                        <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-small-03.jpg" />
                     </a>
                 </div>
                 <div class="col-xs-8 col-sm-8 no-margin">
@@ -58,7 +58,7 @@
             <div class="row">
                 <div class="col-xs-4 col-sm-4 no-margin">
                     <a href="#" class="thumb-holder">
-                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-01.jpg" />
+                        <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-small-01.jpg" />
                     </a>
                 </div>
                 <div class="col-xs-8 col-sm-8 no-margin">
@@ -75,7 +75,7 @@
             <div class="row">
                 <div class="col-xs-4 col-sm-4 no-margin">
                     <a href="#" class="thumb-holder">
-                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-02.jpg" />
+                        <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-small-02.jpg" />
                     </a>
                 </div>
                 <div class="col-xs-8 col-sm-8 no-margin">

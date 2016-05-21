@@ -11,7 +11,7 @@
                                 <div class="ribbon red"><span>sale</span></div>
                                 @endif
                                 <div class="image">
-                                    <img alt="" src="assets/images/blank.gif"
+                                    <img alt="" src="{{ asset('assets/images/blank.gif') }}"
                                         data-echo="{{ asset('assets/images/products/product-01.jpg') }}" />
                                 </div>
                                 <div class="body">

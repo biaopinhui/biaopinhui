@@ -6,7 +6,7 @@
             <li class="sidebar-recent-post-item">
                 <div class="media">
                     <a href="#" class="thumb-holder pull-left">
-                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/recent-posts/1.jpg" />
+                        <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/recent-posts/1.jpg" />
                     </a>
                     <div class="media-body">
                         <h5><a href="#">Coffee Time in Office </a></h5>
@@ -18,7 +18,7 @@
             <li class="sidebar-recent-post-item">
                 <div class="media">
                     <a href="#" class="thumb-holder pull-left">
-                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/recent-posts/2.jpg" />
+                        <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/recent-posts/2.jpg" />
                     </a>
                     <div class="media-body">
                         <h5><a href="#">Lets Meet The Whole Team of MediaCenter </a></h5>
@@ -30,7 +30,7 @@
             <li class="sidebar-recent-post-item">
                 <div class="media">
                     <a href="#" class="thumb-holder pull-left">
-                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/recent-posts/3.jpg" />
+                        <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/recent-posts/3.jpg" />
                     </a>
                     <div class="media-body">
                         <h5><a href="#">The Best Wordpress Support 24/7 </a></h5>
@@ -42,7 +42,7 @@
             <li class="sidebar-recent-post-item">
                 <div class="media">
                     <a href="#" class="thumb-holder pull-left">
-                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/recent-posts/4.jpg" />
+                        <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/recent-posts/4.jpg" />
                     </a>
                     <div class="media-body">
                         <h5><a href="#">Gallery Post with Supported Animation</a></h5>
@@ -54,7 +54,7 @@
             <li class="sidebar-recent-post-item">
                 <div class="media">
                     <a href="#" class="thumb-holder pull-left">
-                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/recent-posts/5.jpg" />
+                        <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/recent-posts/5.jpg" />
                     </a>
                     <div class="media-body">
                         <h5><a href="#">Sweet memories in our Store </a></h5>

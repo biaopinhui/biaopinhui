@@ -15,7 +15,7 @@
 
                     <div class="col-xs-12 col-sm-3 no-margin">
                         <a href="#" class="thumb-holder">
-                            <img alt="" src="assets/images/blank.gif"
+                            <img alt="" src="{{ asset('assets/images/blank.gif') }}"
                                 data-echo="{{ asset('assets/images/products/product-small-04.jpg') }}" />
                         </a>
                     </div>
@@ -34,7 +34,7 @@
 
                     <div class="col-xs-12 col-sm-3 no-margin">
                         <a href="#" class="thumb-holder">
-                            <img alt="" src="assets/images/blank.gif"
+                            <img alt="" src="{{ asset('assets/images/blank.gif') }}"
                                 data-echo="{{ asset('assets/images/products/product-small-05.jpg') }}" />
                         </a>
                     </div>
@@ -53,7 +53,7 @@
 
                     <div class="col-xs-12 col-sm-3 no-margin">
                         <a href="#" class="thumb-holder">
-                            <img alt="" src="assets/images/blank.gif"
+                            <img alt="" src="{{ asset('assets/images/blank.gif') }}"
                                 data-echo="{{ asset('assets/images/products/product-small-06.jpg') }}" />
                         </a>
                     </div>

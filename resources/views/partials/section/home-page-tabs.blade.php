@@ -16,7 +16,7 @@
                             <div class="product-item">
                                 <div class="ribbon red"><span>sale</span></div> 
                                 <div class="image">
-                                    <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-01.jpg" />
+                                    <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-01.jpg" />
                                 </div>
                                 <div class="body">
                                     <div class="label-discount green">-50% sale</div>
@@ -45,7 +45,7 @@
                             <div class="product-item">
                                 <div class="ribbon blue"><span>new!</span></div> 
                                 <div class="image">
-                                    <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-02.jpg" />
+                                    <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-02.jpg" />
                                 </div>
                                 <div class="body">
                                     <div class="label-discount clear"></div>
@@ -73,7 +73,7 @@
                             <div class="product-item">
 
                                 <div class="image">
-                                    <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-03.jpg" />
+                                    <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-03.jpg" />
                                 </div>
                                 <div class="body">
                                     <div class="label-discount clear"></div>
@@ -102,7 +102,7 @@
                                 <div class="ribbon red"><span>sale</span></div> 
                                 <div class="ribbon green"><span>bestseller</span></div> 
                                 <div class="image">
-                                    <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-04.jpg" />
+                                    <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-04.jpg" />
                                 </div>
                                 <div class="body">
                                     <div class="label-discount clear"></div>
@@ -143,7 +143,7 @@
                             <div class="product-item">
                                 <div class="ribbon blue"><span>new!</span></div> 
                                 <div class="image">
-                                    <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-02.jpg" />
+                                    <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-02.jpg" />
                                 </div>
                                 <div class="body">
                                     <div class="label-discount clear"></div>
@@ -172,7 +172,7 @@
                             <div class="product-item">
                                 <div class="ribbon red"><span>sale</span></div> 
                                 <div class="image">
-                                    <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-01.jpg" />
+                                    <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-01.jpg" />
                                 </div>
                                 <div class="body">
                                     <div class="label-discount green">-50% sale</div>
@@ -203,7 +203,7 @@
                                 <div class="ribbon red"><span>sale</span></div> 
                                 <div class="ribbon green"><span>bestseller</span></div> 
                                 <div class="image">
-                                    <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-04.jpg" />
+                                    <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-04.jpg" />
                                 </div>
                                 <div class="body">
                                     <div class="label-discount clear"></div>
@@ -233,7 +233,7 @@
                             <div class="product-item">
 
                                 <div class="image">
-                                    <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-03.jpg" />
+                                    <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-03.jpg" />
                                 </div>
                                 <div class="body">
                                     <div class="label-discount clear"></div>
@@ -276,7 +276,7 @@
                                 <div class="ribbon red"><span>sale</span></div> 
                                 <div class="ribbon green"><span>bestseller</span></div> 
                                 <div class="image">
-                                    <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-04.jpg" />
+                                    <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-04.jpg" />
                                 </div>
                                 <div class="body">
                                     <div class="label-discount clear"></div>
@@ -307,7 +307,7 @@
                             <div class="product-item">
 
                                 <div class="image">
-                                    <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-03.jpg" />
+                                    <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-03.jpg" />
                                 </div>
                                 <div class="body">
                                     <div class="label-discount clear"></div>
@@ -336,7 +336,7 @@
                             <div class="product-item">
                                 <div class="ribbon blue"><span>new!</span></div> 
                                 <div class="image">
-                                    <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-02.jpg" />
+                                    <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-02.jpg" />
                                 </div>
                                 <div class="body">
                                     <div class="label-discount clear"></div>
@@ -365,7 +365,7 @@
                             <div class="product-item">
                                 <div class="ribbon red"><span>sale</span></div> 
                                 <div class="image">
-                                    <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-01.jpg" />
+                                    <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-01.jpg" />
                                 </div>
                                 <div class="body">
                                     <div class="label-discount green">-50% sale</div>

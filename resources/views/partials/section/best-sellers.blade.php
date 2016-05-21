@@ -10,7 +10,7 @@
                     <div class="col-xs-12 col-sm-4 no-margin product-item-holder size-medium hover">
                         <div class="product-item">
                             <div class="image">
-                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-05.jpg" />
+                                <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-05.jpg" />
                             </div>
                             <div class="body">
                                 <div class="label-discount clear"></div>
@@ -38,7 +38,7 @@
                     <div class="col-xs-12 col-sm-4 no-margin product-item-holder size-medium hover">
                         <div class="product-item">
                             <div class="image">
-                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-06.jpg" />
+                                <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-06.jpg" />
                             </div>
                             <div class="body">
                                 <div class="label-discount clear"></div>
@@ -65,7 +65,7 @@
                     <div class="col-xs-12 col-sm-4 no-margin product-item-holder size-medium hover">
                         <div class="product-item">
                             <div class="image">
-                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-07.jpg" />
+                                <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-07.jpg" />
                             </div>
                             <div class="body">
                                 <div class="label-discount clear"></div>
@@ -95,7 +95,7 @@
                     <div class="col-xs-12 col-sm-4 no-margin product-item-holder size-medium hover">
                         <div class="product-item">
                             <div class="image">
-                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-08.jpg" />
+                                <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-08.jpg" />
                             </div>
                             <div class="body">
                                 <div class="label-discount clear"></div>
@@ -122,7 +122,7 @@
                     <div class="col-xs-12 col-sm-4 no-margin product-item-holder size-medium hover">
                         <div class="product-item">
                             <div class="image">
-                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-09.jpg" />
+                                <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-09.jpg" />
                             </div>
                             <div class="body">
                                 <div class="label-discount clear"></div>
@@ -149,7 +149,7 @@
                     <div class="col-xs-12 col-sm-4 no-margin product-item-holder size-medium hover">
                         <div class="product-item">
                             <div class="image">
-                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-10.jpg" />
+                                <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-10.jpg" />
                             </div>
                             <div class="body">
                                 <div class="label-discount clear"></div>
@@ -181,28 +181,28 @@
                     <div id="best-seller-single-product-slider" class="single-product-slider owl-carousel">
                         <div class="single-product-gallery-item" id="slide1">
                             <a data-rel="prettyphoto" href="images/products/product-gallery-01.jpg">
-                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-gallery-01.jpg" />
+                                <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-gallery-01.jpg" />
                             </a>
                         </div><!-- /.single-product-gallery-item -->
 
                         <div class="single-product-gallery-item" id="slide2">
                             <a data-rel="prettyphoto" href="images/products/product-gallery-01.jpg">
-                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-gallery-01.jpg" />
+                                <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-gallery-01.jpg" />
                             </a>
                         </div><!-- /.single-product-gallery-item -->
 
                         <div class="single-product-gallery-item" id="slide3">
                             <a data-rel="prettyphoto" href="images/products/product-gallery-01.jpg">
-                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-gallery-01.jpg" />
+                                <img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-gallery-01.jpg" />
                             </a>
                         </div><!-- /.single-product-gallery-item -->
                     </div><!-- /.single-product-slider -->
 
                     <div class="gallery-thumbs clearfix">
                         <ul>
-                            <li><a class="horizontal-thumb active" data-target="#best-seller-single-product-slider" data-slide="0" href="#slide1"><img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/gallery-thumb-01.jpg" /></a></li>
-                            <li><a class="horizontal-thumb" data-target="#best-seller-single-product-slider" data-slide="1" href="#slide2"><img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/gallery-thumb-01.jpg" /></a></li>
-                            <li><a class="horizontal-thumb" data-target="#best-seller-single-product-slider" data-slide="2" href="#slide3"><img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/gallery-thumb-01.jpg" /></a></li>
+                            <li><a class="horizontal-thumb active" data-target="#best-seller-single-product-slider" data-slide="0" href="#slide1"><img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/gallery-thumb-01.jpg" /></a></li>
+                            <li><a class="horizontal-thumb" data-target="#best-seller-single-product-slider" data-slide="1" href="#slide2"><img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/gallery-thumb-01.jpg" /></a></li>
+                            <li><a class="horizontal-thumb" data-target="#best-seller-single-product-slider" data-slide="2" href="#slide3"><img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/gallery-thumb-01.jpg" /></a></li>
                         </ul>
                     </div><!-- /.gallery-thumbs -->
 

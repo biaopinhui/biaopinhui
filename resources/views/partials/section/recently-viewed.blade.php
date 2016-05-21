@@ -21,7 +21,7 @@
 					<div class="product-item">
 						<div class="ribbon red"><span>sale</span></div> 
 						<div class="image">
-							<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-11.jpg" />
+							<img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-11.jpg" />
 						</div>
 						<div class="body">
 							<div class="title">
@@ -48,7 +48,7 @@
 					<div class="product-item">
 						<div class="ribbon blue"><span>new!</span></div> 
 						<div class="image">
-							<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-12.jpg" />
+							<img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-12.jpg" />
 						</div>
 						<div class="body">
 							<div class="title">
@@ -75,7 +75,7 @@
 					<div class="product-item">
 
 						<div class="image">
-							<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-13.jpg" />
+							<img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-13.jpg" />
 						</div>
 						<div class="body">
 							<div class="title">
@@ -102,7 +102,7 @@
 					<div class="product-item">
 						<div class="ribbon blue"><span>new!</span></div> 
 						<div class="image">
-							<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-14.jpg" />
+							<img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-14.jpg" />
 						</div>
 						<div class="body">
 							<div class="title">
@@ -129,7 +129,7 @@
 					<div class="product-item">
 						<div class="ribbon green"><span>bestseller</span></div> 
 						<div class="image">
-							<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-15.jpg" />
+							<img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-15.jpg" />
 						</div>
 						<div class="body">
 							<div class="title">
@@ -156,7 +156,7 @@
 					<div class="product-item">
 
 						<div class="image">
-							<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-16.jpg" />
+							<img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-16.jpg" />
 						</div>
 						<div class="body">
 							<div class="title">
@@ -183,7 +183,7 @@
 					<div class="product-item">
 
 						<div class="image">
-							<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-13.jpg" />
+							<img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-13.jpg" />
 						</div>
 						<div class="body">
 							<div class="title">
@@ -210,7 +210,7 @@
 					<div class="product-item">
 						<div class="ribbon blue"><span>new!</span></div> 
 						<div class="image">
-							<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-14.jpg" />
+							<img alt="" src="{{ asset('assets/images/blank.gif') }}" data-echo="assets/images/products/product-14.jpg" />
 						</div>
 						<div class="body">
 							<div class="title">
