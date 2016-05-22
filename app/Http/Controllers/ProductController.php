@@ -47,8 +47,8 @@ class ProductController extends Controller
 
         // Get product min price and max price by current conditions
         $productModel = new Product();
-        $minPrice = $fromPrice = $productModel->getMinPrice($conditions) ?: 0;
-        $maxPrice = $toPrice = $productModel->getMaxPrice($conditions) ?: 100;
+        $minPrice = $fromPrice = floor($productModel->getMinPrice($conditions) ?: 0);
+        $maxPrice = $toPrice = ceil($productModel->getMaxPrice($conditions) ?: 100);
 
         if (Request::has('prices')) {
             $prices= Request::get('prices');
