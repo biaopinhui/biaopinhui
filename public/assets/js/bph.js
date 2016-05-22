@@ -5,6 +5,9 @@
         // Product list page
         $('#product-filter-btn').click(function(){
             var series = '';
+            var prices = '';
+            var newUrl = '';
+
             $('.filter-series:checked').each(function(i){
                 if (i !== 0) {
                     series += '-';
@@ -13,11 +16,15 @@
                 series += $(this).data('id');
             });
 
+            newUrl = window.location.href.split('?')[0] + '?';
             if (series !== '') {
-                var baseUrl = window.location.href.split('?')[0];
-                var newUrl = baseUrl + '?series=' + series;
-                window.location.href = newUrl;
+                newUrl += 'series=' + series + '&';
             }
+
+            prices = $('.price-slider').val().replace(',', '-');
+            newUrl += 'prices=' + prices;
+
+            window.location.href = newUrl;
         });
     });
 })(jQuery);

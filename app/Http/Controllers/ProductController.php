@@ -45,8 +45,26 @@ class ProductController extends Controller
             $conditions['series'] = $seriesIds;
         }
 
+        // Get product min price and max price by current conditions
+        $productModel = new Product();
+        $minPrice = $fromPrice = $productModel->getMinPrice($conditions) ?: 0;
+        $maxPrice = $toPrice = $productModel->getMaxPrice($conditions) ?: 100;
+
+        if (Request::has('prices')) {
+            $prices= Request::get('prices');
+            $prices= explode('-', $prices);
+            $conditions['prices'] = $prices;
+
+            if (is_numeric($prices[0])) {
+                $fromPrice = $prices[0];
+            }
+            if (is_numeric($prices[1])) {
+                $toPrice = $prices[1];
+            }
+        }
+
         // Get product list
-        $products = Product::getProducts($conditions);
+        $products = $productModel->getProducts($conditions);
 
         // Get series list
         $series = Filter::getSeries($mainCategory->id, $conditions);
@@ -60,10 +78,11 @@ class ProductController extends Controller
                     $series[$key]['checked'] = false;
                 }
             }
-
-            // Add series to pagination URL
-            $products->appends(['series' => Request::get('series')]);
         }
+
+        // Add series and prices to pagination URL
+        $products->appends(['series' => Request::get('series')]);
+        $products->appends(['prices' => Request::get('prices')]);
 
         $pagination = (new BphPresenter($products))->render();
 
@@ -84,8 +103,10 @@ class ProductController extends Controller
             'series' => $series,
             'products' => $products,
             'pagination' => $pagination,
-            'minPrice' => 0,
-            'maxPrice' => 3000
+            'minPrice' => $minPrice,
+            'maxPrice' => $maxPrice,
+            'fromPrice' => $fromPrice,
+            'toPrice' => $toPrice
         ]);
     }
 

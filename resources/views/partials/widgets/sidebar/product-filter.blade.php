@@ -29,10 +29,18 @@
             <hr>
             <div class="price-range-holder">
 
-                <input type="text" class="price-slider" value="" >
+                <input type="text" class="price-slider"
+                    value="{{ $fromPrice . ',' . $toPrice }}"
+                    data-min="{{ $minPrice }}"
+                    data-max="{{ $maxPrice }}"
+                    data-from="{{ $fromPrice }}"
+                    data-to="{{ $toPrice }}"
+                >
 
                 <span class="min-max">
-                    {{ trans('labels.price') }}: {{ $minPrice }} - {{ $maxPrice }}
+                    {{ trans('labels.price') }}: 
+                    {{ money_format('¥%.2n', $fromPrice) }} - 
+                    {{ money_format('¥%.2n', $toPrice) }}
                 </span>
                 <span class="filter-button">
                     <a id="product-filter-btn" href="javascript:;">{{ trans('labels.filter') }}</a>

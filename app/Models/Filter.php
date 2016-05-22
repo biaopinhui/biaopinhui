@@ -25,7 +25,7 @@ class Filter extends Model
         	// Get product count for each series
         	foreach ($series as $key => $value) {
         		$conditions['series'] = [$value->id];
-        		$series[$key]['productCount'] = Product::getProducts($conditions)->total();
+        		$series[$key]['productCount'] = (new Product())->getProducts($conditions)->total();
         	}
 
             Cache::put($cacheKey, $series, config('cache.timeout'));

@@ -324,11 +324,16 @@
 
         // Price Slider
         if ($('.price-slider').length > 0) {
+            var minPrice = $('.price-slider').data('min');
+            var maxPrice = $('.price-slider').data('max');
+            var fromPrice = $('.price-slider').data('from');
+            var toPrice = $('.price-slider').data('to');
+
             $('.price-slider').slider({
-                min: 100,
-                max: 700,
-                step: 10,
-                value: [100, 400],
+                min: minPrice,
+                max: maxPrice,
+                step: 1,
+                value: [fromPrice, toPrice],
                 handle: "square"
 
             });
