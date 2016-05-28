@@ -35,7 +35,7 @@ class CreateInitialTables extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 50);
-            $table->string('title', 200);
+            $table->string('title', 255);
             $table->float('price');
             $table->float('original_price')->nullable();
             $table->text('excerpt');
@@ -53,6 +53,16 @@ class CreateInitialTables extends Migration
             $table->integer('filter_id');
             $table->integer('product_id');
         });
+
+        Schema::create('users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name', 255);
+            $table->string('email', 255);
+            $table->string('password', 255);
+            $table->rememberToken();
+            $table->boolean('is_admin');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -67,5 +77,6 @@ class CreateInitialTables extends Migration
         Schema::drop('products');
         Schema::drop('category_product');
         Schema::drop('filter_product');
+        Schema::drop('users');
     }
 }
