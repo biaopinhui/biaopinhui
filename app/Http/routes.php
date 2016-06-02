@@ -12,7 +12,12 @@
 */
 
 Route::group(['middleware' => ['web', 'isAdmin']], function () {
-    Route::get('/admin', 'AdminController@index');
+    Route::get('admin', 'AdminController@index');
+
+    Route::get('/admin/categories/{id}', 'AdminController@categories');
+    Route::get('/admin/products/{id}', 'AdminController@products');
+    Route::get('/admin/product/create/{id}', 'ProductController@create');
+    Route::post('/admin/product/store', 'ProductController@store');
 });
 
 Route::group(['middleware' => 'web'], function () {

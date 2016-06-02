@@ -10,6 +10,10 @@ use DB;
 
 class Product extends Model
 {
+    static public STATUS_DELETED = 0;
+    static public STATUS_ACTIVE = 1;
+    static public STATUS_DRAFT = 2;
+
     public function categories()
     {
         return $this->belongsToMany('App\Models\Category');

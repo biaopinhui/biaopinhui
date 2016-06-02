@@ -40,6 +40,7 @@ class CreateInitialTables extends Migration
             $table->float('original_price')->nullable();
             $table->text('excerpt');
             $table->text('description');
+            $table->integer('status');
         });
 
         Schema::create('category_product', function (Blueprint $table) {

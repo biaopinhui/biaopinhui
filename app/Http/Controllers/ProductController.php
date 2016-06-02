@@ -143,4 +143,31 @@ class ProductController extends Controller
             'product' => $product
         ]);
     }
+
+    public function create($categoryId)
+    {
+        $category = Category::find($categoryId);
+
+        $filters = Filter::where('category_id', $category->parent_id)->get();
+
+        return view('admin/product-create')->with([
+            'category' => $category,
+            'filters' => $filters,
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        dd(Request::all());
+    }
+
+    public function edit($categoryId)
+    {
+
+    }
+
+    public function update($categoryId)
+    {
+
+    }
 }

@@ -17,28 +17,27 @@
             </li>
             <li class="active">
                 <a href="#">
-                    <i class="fa fa-list fa-fw"></i> 产品分类
+                    <i class="fa fa-list fa-fw"></i> 产品大类
                     <span class="fa arrow"></span>
                 </a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="flot.html">标牌</a>
+                        <a href="{{ url('admin/categories/1') }}">标牌</a>
                     </li>
                     <li>
-                        <a href="flot.html">徽章</a>
+                        <a href="{{ url('admin/categories/2') }}">徽章</a>
                     </li>
                     <li>
-                        <a href="flot.html">吊牌</a>
+                        <a href="{{ url('admin/categories/3') }}">吊牌</a>
                     </li>
                     <li>
-                        <a href="flot.html">包装</a>
+                        <a href="{{ url('admin/categories/4') }}">包装</a>
                     </li>
                     <li>
-                        <a href="flot.html">印刷</a>
+                        <a href="{{ url('admin/categories/5') }}">印刷</a>
                     </li>
                 </ul>
             </li>
         </ul>
     </div>
-    <!-- /.sidebar-collapse -->
 </div>

@@ -20,7 +20,8 @@ class ProductTableSeeder extends Seeder
                     'price' => $c - 5,
     	        	'original_price' => $i % 4 === 0 ? $c - 4.5 : null,
                     'excerpt' => '这是第' . $i . '个标牌产品的摘要',
-    	        	'description' => '这是第' . $i . '个标牌产品的详细描述'
+                    'description' => '这是第' . $i . '个标牌产品的详细描述',
+    	        	'status' => 1,
     	        ]);
 
                 DB::table('category_product')->insert([

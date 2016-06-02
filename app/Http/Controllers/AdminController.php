@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Http\Requests;
-use Illuminate\Support\Facades\Input;
-use Session;
+use App\Models\Category;
 
 class AdminController extends Controller
 {
@@ -39,8 +37,29 @@ class AdminController extends Controller
 
     public function logout()
     {
-    	Auth::logout();
+        Auth::logout();
 
-    	return redirect('admin/login');
+        return redirect('admin/login');
+    }
+
+    public function categories($categoryId)
+    {
+        $category = Category::find($categoryId);
+
+        $subCategories = Category::where('parent_id', $categoryId)->get();
+
+        return view('admin/category-list')->with([
+            'category' => $category,
+            'subCategories' => $subCategories,
+        ]);
+    }
+
+    public function products($categoryId)
+    {
+        $category = Category::find($categoryId);
+
+        return view('admin/product-list')->with([
+            'category' => $category,
+        ]);
     }
 }
