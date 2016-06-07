@@ -27,4 +27,7 @@ return [
     'price' => 'Price',
     'filter' => 'Filter',
 
+    'status-0' => 'Down',
+    'status-1' => 'Up',
+
 ];

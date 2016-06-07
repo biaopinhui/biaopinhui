@@ -74,6 +74,8 @@
     <!-- Custom Theme JavaScript -->
     <script src="{{ env('BPH_CDN') }}assets/dist/js/sb-admin-2.js"></script>
 
+    @yield('js')
+
 </body>
 
 </html>

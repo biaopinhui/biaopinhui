@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">添加产品 - {{ $category->name }}</h1>
+        <h1 class="page-header">编辑产品</h1>
     </div>
     <div class="row">
         <div class="col-lg-12">
@@ -18,7 +18,7 @@
                             <div class="col-lg-6">
                                 <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                                     <label>名称</label>
-                                    <input class="form-control" name="title" value="{{ old('title') }}">
+                                    <input class="form-control" name="title" value="{{ $product->title }}">
                                     @if ($errors->has('title'))
                                         <span class="help-block has-error">
                                             <strong>{{ $errors->first('title') }}</strong>
@@ -33,7 +33,7 @@
                                             class="form-control"
                                             name="price"
                                             placeholder="价格"
-                                            value="{{ old('price') }}">
+                                            value="{{ $product->price }}">
                                     </div>
                                     @if ($errors->has('price'))
                                     <span class="help-block has-error">
@@ -49,7 +49,7 @@
                                             class="form-control"
                                             name="original_price"
                                             placeholder="原始价格"
-                                            value="{{ old('original_price') }}"
+                                            value="{{ $product->original_price }}"
                                         >
                                     </div>
                                     @if ($errors->has('original_price'))
@@ -60,9 +60,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label>状态</label>
-                                    <select class="form-control" name="status" value="{{ old('status') }}">
-                                        <option value="1"{{ old('status') === "1" ? ' selected' : '' }}>{{ trans('labels.status-1') }}</option>
-                                        <option value="0"{{ old('status') === "0" ? ' selected' : '' }}>{{ trans('labels.status-0') }}</option>
+                                    <select class="form-control" name="status" value="{{ $product->status }}">
+                                        <option value="1"{{ $product->status === "1" ? ' selected' : '' }}>{{ trans('labels.status-1') }}</option>
+                                        <option value="0"{{ $product->status === "0" ? ' selected' : '' }}>{{ trans('labels.status-0') }}</option>
                                     </select>
                                 </div>
                                 <div class="form-group{{ $errors->has('excerpt') ? ' has-error' : '' }}">
@@ -71,7 +71,7 @@
                                         class="form-control"
                                         rows="3"
                                         name="excerpt"
-                                        value="{{ old('excerpt') }}"
+                                        value="{{ $product->excerpt }}"
                                     ></textarea>
                                     @if ($errors->has('excerpt'))
                                     <span class="help-block has-error">
@@ -91,9 +91,6 @@
                                                 type="checkbox"
                                                 name="seriesIds[]"
                                                 value="{{ $filter->id }}"
-                                                @if (old('seriesIds') && in_array($filter->id, old('seriesIds')))
-                                                checked
-                                                @endif
                                             >
                                             {{ $filter->name }}
                                         </label>
@@ -104,7 +101,12 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label>Text area</label>
-                                    <textarea class="form-control" name="description" rows="3"></textarea>
+                                    <textarea
+                                        class="form-control"
+                                        name="description"
+                                        rows="3"
+                                        value="{{ $product->description }}"
+                                    ></textarea>
                                 </div>
 
                                 <input type="hidden" name="categoryId" value="{{ $category->id }}" />

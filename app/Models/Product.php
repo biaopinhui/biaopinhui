@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Request;
@@ -10,13 +11,16 @@ use DB;
 
 class Product extends Model
 {
-    static public STATUS_DELETED = 0;
-    static public STATUS_ACTIVE = 1;
-    static public STATUS_DRAFT = 2;
+    use SoftDeletes;
 
     public function categories()
     {
         return $this->belongsToMany('App\Models\Category');
+    }
+
+    public function series()
+    {
+        return $this->belongsToMany('App\Models\Filter');
     }
 
     public function isOnSale()

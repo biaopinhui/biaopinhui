@@ -22,6 +22,7 @@
                                     <th>ID</th>
                                     <th>产品名称</th>
                                     <th>价格</th>
+                                    <th>状态</th>
                                     <th class="col-md-2">操作</th>
                                 </tr>
                             </thead>
@@ -31,9 +32,17 @@
                                     <td>{{ $product->id }}</td>
                                     <td>{{ $product->title }}</td>
                                     <td>{{ $product->price }}</td>
+                                    <td>{{ trans('labels.status-' . $product->status) }}</td>
                                     <td class="col-md-2">
                                         <a class="col-md-3 col-md-offset-2" href="{{ url('admin/products/') }}" title="编辑"><i class="glyphicon glyphicon-edit"></i></a>
-                                        <a class="col-md-3" href="{{ url('admin/products/') }}" title="删除"><i class="glyphicon glyphicon-trash"></i></a>
+                                        <a
+                                            class="col-md-3 product-delete"
+                                            href="{{ url('admin/products/') }}"
+                                            title="删除"
+                                            data-id="{{ $product->id }}"
+                                        >
+                                            <i class="glyphicon glyphicon-trash"></i>
+                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -45,4 +54,26 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+    @parent
+
+    <script>
+    (function(){
+        $('.product-delete').click(function(){
+            var productId = $(this).data().id;
+
+            $.ajax({
+                url: '{{ url("admin/product/destroy") }}/' + productId,
+                context: this,
+                success: function(){
+                    $(this).closest('tr').remove()
+                }
+            });
+
+            return false;
+        });
+    })();
+    </script>
 @endsection

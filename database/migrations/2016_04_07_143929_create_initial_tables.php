@@ -34,13 +34,14 @@ class CreateInitialTables extends Migration
 
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 50);
             $table->string('title', 255);
             $table->float('price');
             $table->float('original_price')->nullable();
             $table->text('excerpt');
             $table->text('description');
             $table->integer('status');
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('category_product', function (Blueprint $table) {

@@ -6,7 +6,9 @@ use App\Models\Category;
 use App\Models\Filter;
 use App\Models\Product;
 use App\Presenters\BphPresenter;
-use Request;
+use Illuminate\Http\Request;
+use Carbon\Carbon;
+use DB;
 
 class ProductController extends Controller
 {
@@ -15,7 +17,7 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($categorySlug, $subCategorySlug = null)
+    public function index(Request $request, $categorySlug, $subCategorySlug = null)
     {
         // Get main category
         $mainCategory = Category::where([
@@ -39,8 +41,8 @@ class ProductController extends Controller
         // Prepare query conditions for products
         $conditions = ['categoryIds' => $categoryIds];
 
-        if (Request::has('series')) {
-            $seriesIds = Request::get('series');
+        if ($request->has('series')) {
+            $seriesIds = $request->get('series');
             $seriesIds = explode('-', $seriesIds);
             $conditions['series'] = $seriesIds;
         }
@@ -50,8 +52,8 @@ class ProductController extends Controller
         $minPrice = $fromPrice = floor($productModel->getMinPrice($conditions) ?: 0);
         $maxPrice = $toPrice = ceil($productModel->getMaxPrice($conditions) ?: 100);
 
-        if (Request::has('prices')) {
-            $prices= Request::get('prices');
+        if ($request->has('prices')) {
+            $prices= $request->get('prices');
             $prices= explode('-', $prices);
             $conditions['prices'] = $prices;
 
@@ -69,7 +71,7 @@ class ProductController extends Controller
         // Get series list
         $series = Filter::getSeries($mainCategory->id, $conditions);
 
-        if (Request::has('series')) {
+        if ($request->has('series')) {
             // Prepare checkbox data for frontend
             foreach ($series as $key => $value) {
                 if (in_array($value['id'], $seriesIds)) {
@@ -81,8 +83,8 @@ class ProductController extends Controller
         }
 
         // Add series and prices to pagination URL
-        $products->appends(['series' => Request::get('series')]);
-        $products->appends(['prices' => Request::get('prices')]);
+        $products->appends(['series' => $request->get('series')]);
+        $products->appends(['prices' => $request->get('prices')]);
 
         $pagination = (new BphPresenter($products))->render();
 
@@ -158,16 +160,58 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        dd(Request::all());
+        $this->validate($request, [
+            'title' => 'required|unique:products',
+            'price' => 'required|numeric',
+            'original_price' => 'numeric',
+            'excerpt' => 'required',
+        ]);
+
+        $product = new Product();
+        $product->title          = $request->get('title');
+        $product->price          = $request->get('price');
+        $product->original_price = $request->get('original_price');
+        $product->excerpt        = $request->get('excerpt');
+        $product->description    = $request->get('description');
+        $product->status         = $request->get('status');
+        $product->created_at     = Carbon::now();
+        $product->updated_at     = Carbon::now();
+
+        if ($product->save()) {
+            // Add category relationship for the product
+            $categoryId = $request->get('categoryId');
+            $product->categories()->attach([$categoryId]);
+
+            // Add filter relationship for the product
+            $seriesIds = $request->get('seriesIds', []);
+            $product->series()->attach($seriesIds);
+        }
+
+        return redirect('admin/products/' . $categoryId);
     }
 
     public function edit($categoryId)
     {
+        $product = Product::find($categoryId);
 
+        $category = $product->categories[0];
+        $filters = Filter::where('category_id', $category->parent_id)->get();
+
+        return view('admin/product-edit')->with([
+            'product' => $product,
+            'filters' => $filters,
+            'category' => $category,
+        ]);
     }
 
     public function update($categoryId)
     {
 
+    }
+
+    public function destroy($productId)
+    {
+        $product = Product::find($productId);
+        $product->delete();
     }
 }

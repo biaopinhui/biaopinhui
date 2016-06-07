@@ -27,4 +27,7 @@ return [
     'price' => '价格',
     'filter' => '过滤',
 
+    'status-0' => '下架',
+    'status-1' => '上架',
+
 ];
