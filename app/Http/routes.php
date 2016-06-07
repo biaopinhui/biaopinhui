@@ -17,7 +17,7 @@ Route::group(['middleware' => ['web', 'isAdmin']], function () {
     Route::get('/admin/categories/{id}', 'AdminController@categories');
     Route::get('/admin/products/{id}', 'AdminController@products');
     Route::get('/admin/product/create/{id}', 'ProductController@create');
-    Route::post('/admin/product/store', 'ProductController@store');
+    Route::post('/admin/product/store/{id}', 'ProductController@store');
     Route::get('/admin/product/edit/{id}', 'ProductController@edit');
     Route::post('/admin/product/update', 'ProductController@update');
     Route::get('/admin/product/destroy/{id}', 'ProductController@destroy');

@@ -149,16 +149,20 @@ class ProductController extends Controller
     public function create($categoryId)
     {
         $category = Category::find($categoryId);
+        $categories = Category::where('parent_id', $category->parent_id)
+                            ->pluck('name', 'id')->all();
 
         $filters = Filter::where('category_id', $category->parent_id)->get();
 
+
         return view('admin/product-create')->with([
             'category' => $category,
+            'categories' => $categories,
             'filters' => $filters,
         ]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $categoryId)
     {
         $this->validate($request, [
             'title' => 'required|unique:products',
@@ -179,8 +183,8 @@ class ProductController extends Controller
 
         if ($product->save()) {
             // Add category relationship for the product
-            $categoryId = $request->get('categoryId');
-            $product->categories()->attach([$categoryId]);
+            $categoryIds = $request->get('categoryIds', []);
+            $product->categories()->attach($categoryIds);
 
             // Add filter relationship for the product
             $seriesIds = $request->get('seriesIds', []);
