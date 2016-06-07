@@ -13,12 +13,15 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <form role="form" method="post" action="{{ url('admin/product/store') }}">
+                        <form role="form" method="post" action="{{ url('admin/product/update/' . $product->id) }}">
                             {!! csrf_field() !!}
                             <div class="col-lg-6">
                                 <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                                     <label>名称</label>
-                                    <input class="form-control" name="title" value="{{ $product->title }}">
+                                    <input class="form-control"
+                                        name="title"
+                                        value="{{ old('title') !== null ? old('title') : $product->title}}"
+                                    >
                                     @if ($errors->has('title'))
                                         <span class="help-block has-error">
                                             <strong>{{ $errors->first('title') }}</strong>
@@ -33,7 +36,8 @@
                                             class="form-control"
                                             name="price"
                                             placeholder="价格"
-                                            value="{{ $product->price }}">
+                                            value="{{ old('price') !== null ? old('price') : $product->price}}"
+                                        >
                                     </div>
                                     @if ($errors->has('price'))
                                     <span class="help-block has-error">
@@ -49,7 +53,7 @@
                                             class="form-control"
                                             name="original_price"
                                             placeholder="原始价格"
-                                            value="{{ $product->original_price }}"
+                                            value="{{ old('original_price') !== null ? old('original_price') : $product->original_price}}"
                                         >
                                     </div>
                                     @if ($errors->has('original_price'))
@@ -60,9 +64,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label>状态</label>
-                                    <select class="form-control" name="status" value="{{ $product->status }}">
-                                        <option value="1"{{ $product->status === "1" ? ' selected' : '' }}>{{ trans('labels.status-1') }}</option>
-                                        <option value="0"{{ $product->status === "0" ? ' selected' : '' }}>{{ trans('labels.status-0') }}</option>
+                                    <select class="form-control"
+                                        name="status"
+                                    >
+                                        <option value="1"{{ (old('status') !== null && old('status') === 1) || (old('status') === null && $product->status === 1) ? ' selected' : '' }}>{{ trans('labels.status-1') }}</option>
+                                        <option value="0"{{ (old('status') !== null && old('status') === 0) || (old('status') === null && $product->status === 0) ? ' selected' : '' }}>{{ trans('labels.status-0') }}</option>
                                     </select>
                                 </div>
                                 <div class="form-group{{ $errors->has('excerpt') ? ' has-error' : '' }}">
@@ -71,8 +77,7 @@
                                         class="form-control"
                                         rows="3"
                                         name="excerpt"
-                                        value="{{ $product->excerpt }}"
-                                    ></textarea>
+                                    >{{ old('excerpt') !== null ? old('excerpt') : $product->excerpt}}</textarea>
                                     @if ($errors->has('excerpt'))
                                     <span class="help-block has-error">
                                         <strong>{{ $errors->first('excerpt') }}</strong>
@@ -80,19 +85,42 @@
                                     @endif
                                 </div>
                             </div>
-                            <!-- /.col-lg-6 (nested) -->
-                            <div class="col-lg-6">
+                            <div class="col-lg-3">
+                                <div class="form-group{{ $errors->has('categoryIds') ? ' has-error' : '' }}">
+                                    <label>所属分类</label>
+                                    @foreach ($categories as $item)
+                                    <div class="checkbox">
+                                        <label>
+                                            <input
+                                                type="checkbox"
+                                                name="categoryIds[]"
+                                                value="{{ $item->id }}"
+                                                {{ (old('categoryIds') !== null && in_array($item->id, old('categoryIds'))) || (old('categoryIds') === null && $item->isChecked) ? "checked" : "" }}
+                                            >
+                                            {{ $item->name }}
+                                        </label>
+                                    </div>
+                                    @endforeach
+                                    @if ($errors->has('categoryIds'))
+                                    <span class="help-block has-error">
+                                        <strong>{{ $errors->first('categoryIds') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
                                 <div class="form-group">
                                     <label>所属系列</label>
-                                    @foreach ($filters as $filter)
+                                    @foreach ($series as $item)
                                     <div class="checkbox">
                                         <label>
                                             <input
                                                 type="checkbox"
                                                 name="seriesIds[]"
-                                                value="{{ $filter->id }}"
+                                                value="{{ $item->id }}"
+                                                {{ (old('seriesIds') !== null && in_array($item->id, old('seriesIds'))) || (old('seriesIds') === null && $item->isChecked) ? "checked" : "" }}
                                             >
-                                            {{ $filter->name }}
+                                            {{ $item->name }}
                                         </label>
                                     </div>
                                     @endforeach
@@ -105,11 +133,10 @@
                                         class="form-control"
                                         name="description"
                                         rows="3"
-                                        value="{{ $product->description }}"
-                                    ></textarea>
+                                    >{{ old('description') !== null ? old('description') : $product->description}}</textarea>
                                 </div>
 
-                                <input type="hidden" name="categoryId" value="{{ $category->id }}" />
+                                <input type="hidden" name="productId" value="{{ $product->id }}" />
 
                                 <button type="submit" class="btn btn-primary">提交</button>
                                 <button type="reset" class="btn btn-warning">重置</button>

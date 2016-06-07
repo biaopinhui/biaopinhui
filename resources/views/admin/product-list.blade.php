@@ -34,7 +34,7 @@
                                     <td>{{ $product->price }}</td>
                                     <td>{{ trans('labels.status-' . $product->status) }}</td>
                                     <td class="col-md-2">
-                                        <a class="col-md-3 col-md-offset-2" href="{{ url('admin/products/') }}" title="编辑"><i class="glyphicon glyphicon-edit"></i></a>
+                                        <a class="col-md-3 col-md-offset-2" href="{{ url('admin/product/edit/' . $product->id) }}" title="编辑"><i class="glyphicon glyphicon-edit"></i></a>
                                         <a
                                             class="col-md-3 product-delete"
                                             href="{{ url('admin/products/') }}"

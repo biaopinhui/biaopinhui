@@ -149,8 +149,7 @@ class ProductController extends Controller
     public function create($categoryId)
     {
         $category = Category::find($categoryId);
-        $categories = Category::where('parent_id', $category->parent_id)
-                            ->pluck('name', 'id')->all();
+        $categories = Category::where('parent_id', $category->parent_id)->get();
 
         $filters = Filter::where('category_id', $category->parent_id)->get();
 
@@ -169,6 +168,7 @@ class ProductController extends Controller
             'price' => 'required|numeric',
             'original_price' => 'numeric',
             'excerpt' => 'required',
+            'categoryIds' => 'required',
         ]);
 
         $product = new Product();
@@ -194,23 +194,69 @@ class ProductController extends Controller
         return redirect('admin/products/' . $categoryId);
     }
 
-    public function edit($categoryId)
+    public function edit(Request $request, $productId)
     {
-        $product = Product::find($categoryId);
+        $product = Product::find($productId);
 
         $category = $product->categories[0];
-        $filters = Filter::where('category_id', $category->parent_id)->get();
+        $categories = Category::where('parent_id', $category->parent_id)->get();
+        $checkedCategories = $product->categories->lists('id')->all();
+        foreach ($categories as $key => $item) {
+            if (in_array($item->id, $checkedCategories)) {
+                $categories[$key]->isChecked = true;
+            } else {
+                $categories[$key]->isChecked = false;
+            }
+        }
+
+        $series = Filter::where('category_id', $category->parent_id)->get();
+        $checkedSeries = $product->series->lists('id')->all();
+        foreach ($series as $key => $item) {
+            if (in_array($item->id, $checkedSeries)) {
+                $series[$key]->isChecked = true;
+            } else {
+                $series[$key]->isChecked = false;
+            }
+        }
 
         return view('admin/product-edit')->with([
             'product' => $product,
-            'filters' => $filters,
+            'series' => $series,
+            'categories' => $categories,
             'category' => $category,
         ]);
     }
 
-    public function update($categoryId)
+    public function update(Request $request, $productId)
     {
+        $this->validate($request, [
+            'title' => 'required|unique:products,title,' . $productId,
+            'price' => 'required|numeric',
+            'original_price' => 'numeric',
+            'excerpt' => 'required',
+            'categoryIds' => 'required',
+        ]);
 
+        $product = Product::find($productId);
+        $product->title          = $request->get('title');
+        $product->price          = $request->get('price');
+        $product->original_price = $request->get('original_price');
+        $product->excerpt        = $request->get('excerpt');
+        $product->description    = $request->get('description');
+        $product->status         = $request->get('status');
+        $product->updated_at     = Carbon::now();
+
+        if ($product->save()) {
+            // Add category relationship for the product
+            $categoryIds = $request->get('categoryIds', []);
+            $product->categories()->sync($categoryIds);
+
+            // Add filter relationship for the product
+            $seriesIds = $request->get('seriesIds', []);
+            $product->series()->sync($seriesIds);
+        }
+
+        return redirect('admin/products/' . $categoryIds[0]);
     }
 
     public function destroy($productId)

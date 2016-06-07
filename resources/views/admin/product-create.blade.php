@@ -80,23 +80,28 @@
                                 </div>
                             </div>
                             <div class="col-lg-3">
-                                <div class="form-group">
+                                <div class="form-group{{ $errors->has('categoryIds') ? ' has-error' : '' }}">
                                     <label>所属分类</label>
-                                    @foreach ($categories as $categoryId => $categoryName)
+                                    @foreach ($categories as $item)
                                     <div class="checkbox">
                                         <label>
                                             <input
                                                 type="checkbox"
                                                 name="categoryIds[]"
-                                                value="{{ $categoryId }}"
-                                                @if (old('categoryIds') && in_array($categoryId, old('categoryIds')))
+                                                value="{{ $item->id }}"
+                                                @if (((old('categoryIds') !== null && in_array($item->id, old('categoryIds')))) || (old('categoryIds') === null && $category->id == $item->id))
                                                 checked
                                                 @endif
                                             >
-                                            {{ $categoryName }}
+                                            {{ $item->name }}
                                         </label>
                                     </div>
                                     @endforeach
+                                    @if ($errors->has('categoryIds'))
+                                    <span class="help-block has-error">
+                                        <strong>{{ $errors->first('categoryIds') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-lg-3">
