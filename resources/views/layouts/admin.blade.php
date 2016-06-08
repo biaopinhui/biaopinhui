@@ -39,6 +39,18 @@
 </head>
 
 <body>
+    @if (session('status'))
+    <div class="row">
+        <div
+            class="alert alert-{{ session('status.type') }} alert-dismissable col-md-6 col-md-offset-3"
+            style="position: fixed; z-index: 1001;"
+        >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            {{ session('status.message') }}
+        </div>
+    </div>
+    @endif
+
     <div id="wrapper">
 
         <!-- Navigation -->

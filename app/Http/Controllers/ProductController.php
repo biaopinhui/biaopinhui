@@ -191,7 +191,12 @@ class ProductController extends Controller
             $product->series()->attach($seriesIds);
         }
 
-        return redirect('admin/products/' . $categoryId);
+        $status = [
+            'type' => 'success',
+            'message' => 'Product added successfully.'
+        ];
+
+        return redirect('admin/products/' . $categoryId)->with('status', $status);
     }
 
     public function edit(Request $request, $productId)
@@ -256,7 +261,12 @@ class ProductController extends Controller
             $product->series()->sync($seriesIds);
         }
 
-        return redirect('admin/products/' . $categoryIds[0]);
+        $status = [
+            'type' => 'success',
+            'message' => 'Product information updated successfully.'
+        ];
+
+        return redirect('admin/product/edit/' . $productId)->with('status', $status);
     }
 
     public function destroy($productId)
