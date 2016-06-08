@@ -128,8 +128,9 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <label>Text area</label>
+                                    <label>描述</label>
                                     <textarea
+                                        id="product-discription"
                                         class="form-control"
                                         name="description"
                                         rows="3"
@@ -153,4 +154,32 @@
         <!-- /.col-lg-12 -->
     </div>
 </div>
+@endsection
+
+@section('js')
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+
+<script>
+tinymce.init({
+    selector: '#product-discription',
+    height: 500,
+    theme: 'modern',
+    plugins: [
+        'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+        'searchreplace wordcount visualblocks visualchars code fullscreen',
+        'insertdatetime media nonbreaking save table contextmenu directionality',
+        'emoticons template paste textcolor colorpicker textpattern imagetools'
+    ],
+    toolbar1: 'insertfile undo redo | styleselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media | preview',
+    image_advtab: true,
+    templates: [
+        { title: 'Test template 1', content: 'Test 1' },
+        { title: 'Test template 2', content: 'Test 2' }
+    ],
+    content_css: [
+        '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
+        '//www.tinymce.com/css/codepen.min.css'
+    ]
+    });
+</script>
 @endsection

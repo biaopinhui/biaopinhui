@@ -8,29 +8,25 @@
         <div class="tab-holder">
             
             <ul class="nav nav-tabs simple" >
-                <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+                <li class="active"><a href="#description" data-toggle="tab">{{ trans('labels.product-detail') }}</a></li>
+                <!-- 
                 <li><a href="#additional-info" data-toggle="tab">Additional Information</a></li>
                 <li><a href="#reviews" data-toggle="tab">Reviews (3)</a></li>
+                -->
             </ul><!-- /.nav-tabs -->
 
             <div class="tab-content">
                 <div class="tab-pane active" id="description">
-                    <div>{{ $product->description }}</div>
+                    <div>{!! $product->description !!}</div>
 
+                    <!--
                     <div class="meta-row">
                         <div class="inline">
-                            <label>SKU:</label>
-                            <span>54687621</span>
-                        </div><!-- /.inline -->
-
-                        <span class="seperator">/</span>
-
-                        <div class="inline">
-                            <label>categories:</label>
+                            <label>{{ trans('labels.categories-belongs-to') }}:</label>
                             <span><a href="#">-50% sale</a>,</span>
                             <span><a href="#">gaming</a>,</span>
                             <span><a href="#">desktop PC</a></span>
-                        </div><!-- /.inline -->
+                        </div>
 
                         <span class="seperator">/</span>
 
@@ -39,8 +35,9 @@
                             <span><a href="#">fast</a>,</span>
                             <span><a href="#">gaming</a>,</span>
                             <span><a href="#">strong</a></span>
-                        </div><!-- /.inline -->
-                    </div><!-- /.meta-row -->
+                        </div>
+                    </div>
+                    -->
                 </div><!-- /.tab-pane #description -->
 
                 <div class="tab-pane" id="additional-info">

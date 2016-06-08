@@ -30,4 +30,7 @@ return [
     'status-0' => '下架',
     'status-1' => '上架',
 
+    'product-detail' => '产品详情',
+    'categories-belongs-to' => '所属分类',
+
 ];

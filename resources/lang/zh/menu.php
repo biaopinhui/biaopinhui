@@ -13,7 +13,7 @@ return [
     'diaopai' => '吊牌',
     'baozhuang' => '包装',
     'yinshua' => '印刷',
-    'news-center' => '新闻中心',
+    'news-center' => '资讯中心',
     'biaopai-news' => '标牌资讯',
     'huizhang-news' => '徽章资讯',
     'diaopai-news' => '吊牌资讯',

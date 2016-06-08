@@ -30,4 +30,7 @@ return [
     'status-0' => 'Down',
     'status-1' => 'Up',
 
+    'product-detail' => 'Product Details',
+    'categories-belongs-to' => 'Categories',
+
 ];
