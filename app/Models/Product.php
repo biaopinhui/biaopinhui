@@ -34,7 +34,7 @@ class Product extends Model
         $cacheKey = 'getProducts_' . md5(serialize($conditions)) . '_page' . $page;
 
         if (!($products = Cache::get($cacheKey))) {
-            $builder = Product::select('*');
+            $builder = Product::select('*')->groupBy('id');
             $builder = $this->processBuilder($builder, $conditions);
 
             $products = $builder->paginate(config('product.page_number'));
