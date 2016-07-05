@@ -9,6 +9,7 @@ use App\Presenters\BphPresenter;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use DB;
+use Storage;
 
 class ProductController extends Controller
 {

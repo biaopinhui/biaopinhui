@@ -151,13 +151,46 @@
             </div>
             <!-- /.panel -->
         </div>
-        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    产品图片
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <form method="post" action="dump.php">  
+                            <div id="uploader">
+                                <p>Your browser doesn't have Flash, Silverlight or HTML5 support.</p>
+                            </div>
+                            <input type="submit" value="Send" />
+                        </form>
+
+ 
+
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
     </div>
 </div>
 @endsection
 
+@section('css')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css">
+<link href="{{ env('BPH_CDN') }}assets/plupload/js/jquery.ui.plupload/css/jquery.ui.plupload.css" rel="stylesheet" type="text/css">
+@endsection
+
 @section('js')
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<script src="{{ env('BPH_CDN') }}assets/plupload/js/plupload.full.min.js"></script>
+<script src="{{ env('BPH_CDN') }}assets/plupload/js/jquery.ui.plupload/jquery.ui.plupload.js"></script>
 
 <script>
 tinymce.init({
@@ -180,6 +213,50 @@ tinymce.init({
         '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
         '//www.tinymce.com/css/codepen.min.css'
     ]
+});
+
+(function(){
+    $("#uploader").plupload({
+        // General settings
+        runtimes : 'html5,flash,silverlight,html4',
+        url : "{{ url('admin/image/upload/' . $product->id) }}",
+
+        // User can upload no more then 20 files in one go (sets multiple_queues to false)
+        max_file_count: 20,
+        
+        chunk_size: '1mb',
+        
+        filters : {
+            // Maximum file size
+            max_file_size : '1000mb',
+            // Specify what files to browse for
+            mime_types: [
+                {title : "Image files", extensions : "jpg,gif,png"}
+            ]
+        },
+
+        // Rename files by clicking on their titles
+        rename: false,
+        
+        // Sort files
+        sortable: true,
+
+        // Enable ability to drag'n'drop files onto the widget (currently only HTML5 supports that)
+        dragdrop: true,
+
+        // Views to activate
+        views: {
+            list: true,
+            thumbs: true, // Show thumbs
+            active: 'thumbs'
+        },
+
+        // Flash settings
+        flash_swf_url : '../../js/Moxie.swf',
+
+        // Silverlight settings
+        silverlight_xap_url : '../../js/Moxie.xap'
     });
+})();
 </script>
 @endsection

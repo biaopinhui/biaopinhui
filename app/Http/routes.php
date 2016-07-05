@@ -21,6 +21,8 @@ Route::group(['middleware' => ['web', 'isAdmin']], function () {
     Route::get('/admin/product/edit/{id}', 'ProductController@edit');
     Route::post('/admin/product/update/{id}', 'ProductController@update');
     Route::get('/admin/product/destroy/{id}', 'ProductController@destroy');
+
+    Route::post('/admin/image/upload/{id}', 'ImageController@upload');
 });
 
 Route::group(['middleware' => 'web'], function () {
