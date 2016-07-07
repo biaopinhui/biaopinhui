@@ -160,18 +160,16 @@
                     产品图片
                 </div>
                 <div class="panel-body">
-                    <div class="row">
-                        <form method="post" action="dump.php">  
-                            <div id="uploader">
-                                <p>Your browser doesn't have Flash, Silverlight or HTML5 support.</p>
-                            </div>
-                            <input type="submit" value="Send" />
-                        </form>
-
- 
-
+                    <div class="product-image-list clearfix">
+                        @foreach ($product->images as $image)
+                        <div class="pull-left product-image-item">
+                            <img class="img-rounded" src="{{ product_image($product->id, $image->real_name) }}" alt="{{ $image->filename }}">
+                        </div>
+                        @endforeach
                     </div>
-                    <!-- /.row (nested) -->
+                    <div id="uploader">
+                        <p>Your browser doesn't have Flash, Silverlight or HTML5 support.</p>
+                    </div>
                 </div>
                 <!-- /.panel-body -->
             </div>
@@ -184,6 +182,19 @@
 @section('css')
 <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css">
 <link href="{{ env('BPH_CDN') }}assets/plupload/js/jquery.ui.plupload/css/jquery.ui.plupload.css" rel="stylesheet" type="text/css">
+
+<style>
+.product-image-list {
+    padding-bottom: 10px;
+}
+.product-image-item {
+    padding: 0 10px 10px 0;
+}
+.product-image-item img {
+    width: 200px;
+    height: 150px;
+}
+</style>
 @endsection
 
 @section('js')
@@ -224,11 +235,11 @@ tinymce.init({
         // User can upload no more then 20 files in one go (sets multiple_queues to false)
         max_file_count: 20,
         
-        chunk_size: '1mb',
+        chunk_size: '10mb',
         
         filters : {
             // Maximum file size
-            max_file_size : '1000mb',
+            max_file_size : '10mb',
             // Specify what files to browse for
             mime_types: [
                 {title : "Image files", extensions : "jpg,gif,png"}
@@ -255,7 +266,13 @@ tinymce.init({
         flash_swf_url : '../../js/Moxie.swf',
 
         // Silverlight settings
-        silverlight_xap_url : '../../js/Moxie.xap'
+        silverlight_xap_url : '../../js/Moxie.xap',
+
+        init : {
+            UploadComplete: function(up, file, info) {
+                window.location.reload();
+            }
+        }
     });
 })();
 </script>

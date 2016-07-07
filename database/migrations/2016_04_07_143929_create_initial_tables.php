@@ -65,6 +65,14 @@ class CreateInitialTables extends Migration
             $table->boolean('is_admin');
             $table->timestamps();
         });
+
+        Schema::create('images', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('product_id');
+            $table->string('filename', 255);
+            $table->string('real_name', 255);
+            $table->timestamps();
+        });
     }
 
     /**

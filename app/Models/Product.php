@@ -23,6 +23,11 @@ class Product extends Model
         return $this->belongsToMany('App\Models\Filter');
     }
 
+    public function images()
+    {
+        return $this->hasMany('App\Models\Image');
+    }
+
     public function isOnSale()
     {
         return !empty($this->original_price);
